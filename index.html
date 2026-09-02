@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Сайти для приватних лікарів — за 3 дні, 200 $</title>
-<meta name="description" content="Роблю сайти-візитки приватним лікарям: опис послуг, ціни, відгуки, кнопки запису. Готово за 3 робочі дні, 200 $. Приклади робіт усередині.">
-<meta property="og:title" content="Сайти для приватних лікарів — за 3 дні, 200 $">
-<meta property="og:description" content="Опис послуг, ціни, ваші фото й відгуки, кнопки запису. Готово за 3 робочі дні. Приклади робіт усередині.">
+<title>Сайти для приватних лікарів — за 3 робочі дні, 200 $</title>
+<meta name="description" content="Робимо сайти тільки приватним лікарям: послуги, ціни, відгуки, кнопки запису. Готово за 3 робочі дні, 200 $ фіксовано. Сайт і домен оформлюються на вас.">
+<meta property="og:title" content="Сайти для приватних лікарів — за 3 робочі дні, 200 $">
+<meta property="og:description" content="Робимо сайти тільки лікарям. 3 робочі дні, 200 $ фіксовано, сайт і домен оформлюються на вас.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="uk_UA">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='10' fill='%231B4DF0'/%3E%3C/svg%3E">
@@ -15,343 +15,412 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap">
 <style>
   :root{
-    --ink:#101418;
-    --muted:#6E7781;
-    --line:#E4E7EB;
-    --surface:#F4F6F8;
-    --accent:#1B4DF0;
-    --accent-dark:#1338B8;
-    --wrap:1080px;
+    --ink:#101418; --muted:#5B6673; --line:#E4E7EB;
+    --blue:#1B4DF0; --blue-dark:#1338B8; --blue-soft:#EEF1FF; --blue-tint:#F5F7FF;
+    --amber:#FFC531; --surface:#F7F9FB; --wrap:1140px;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
-  body{
-    margin:0;background:#fff;color:var(--ink);
-    font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
-    font-weight:500;line-height:1.5;-webkit-font-smoothing:antialiased;
-  }
-  a{color:var(--accent);}
-  a:hover{color:var(--accent-dark);}
-  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px;}
-  section{padding:clamp(64px,9vw,112px) 0;}
-  .eyebrow{
-    display:flex;align-items:center;gap:12px;
-    font-size:13px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;
-  }
-  .eyebrow::before{
-    content:"";width:10px;height:10px;border-radius:50%;
-    background:var(--accent);flex-shrink:0;
-  }
-  h1,h2,h3{margin:0;letter-spacing:-.03em;line-height:1.05;font-weight:800;}
-  h1{font-size:clamp(38px,7.5vw,68px);}
-  h2{font-size:clamp(30px,5vw,46px);line-height:1.08;}
-  h3{font-size:20px;letter-spacing:-.02em;line-height:1.25;}
+  body{margin:0;background:#fff;color:var(--ink);font-family:'Manrope',system-ui,-apple-system,sans-serif;font-weight:500;line-height:1.55;-webkit-font-smoothing:antialiased;}
+  a{color:var(--blue);} a:hover{color:var(--blue-dark);}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px;}
+  section{padding:clamp(56px,7vw,92px) 0;}
+  h1,h2,h3{margin:0;letter-spacing:-.03em;font-weight:800;line-height:1.08;}
+  h1{font-size:clamp(32px,5.4vw,54px);}
+  h2{font-size:clamp(26px,3.8vw,40px);}
+  h3{font-size:19px;letter-spacing:-.02em;line-height:1.3;}
   p{margin:0;}
-  .lead{font-size:clamp(17px,2.2vw,21px);line-height:1.55;color:var(--muted);}
-  .rule{border:0;border-top:1px solid var(--line);margin:0;}
+  .sub{color:var(--muted);font-size:clamp(16px,1.9vw,19px);}
+  .center{text-align:center;}
+  .center .sub{max-width:62ch;margin:16px auto 0;}
+  .tag{display:inline-block;padding:7px 16px;border-radius:999px;background:var(--blue-soft);color:var(--blue);font-size:13px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;}
 
-  /* header */
-  header{
-    position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);
-    backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line);
-  }
-  .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px;}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;color:var(--ink);text-decoration:none;font-size:17px;}
-  .brand span{width:12px;height:12px;border-radius:50%;background:var(--accent);}
-  .bar .btn{padding:10px 18px;font-size:14px;min-height:0;}
+  /* nav */
+  header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;gap:28px;height:66px;}
+  .logo{display:flex;align-items:flex-end;gap:7px;font-weight:800;font-size:20px;letter-spacing:-.04em;color:var(--ink);text-decoration:none;}
+  .logo i{width:9px;height:9px;border-radius:50%;background:var(--blue);margin-bottom:7px;font-style:normal;}
+  .menu{display:flex;gap:24px;margin-left:auto;}
+  .menu a{color:var(--muted);text-decoration:none;font-size:15px;font-weight:600;}
+  .menu a:hover{color:var(--ink);}
+  .nav .btn{padding:11px 22px;min-height:0;font-size:15px;}
 
   /* buttons */
-  .btn{
-    display:inline-flex;align-items:center;justify-content:center;gap:8px;
-    min-height:52px;padding:14px 28px;border-radius:999px;
-    font-weight:700;font-size:16px;text-decoration:none;
-    transition:background .15s ease,color .15s ease,border-color .15s ease;
-  }
-  .btn-primary{background:var(--accent);color:#fff;}
-  .btn-primary:hover{background:var(--accent-dark);color:#fff;}
-  .btn-ghost{border:2px solid var(--line);color:var(--ink);background:#fff;}
-  .btn-ghost:hover{border-color:var(--ink);color:var(--ink);}
-  .btn-row{display:flex;flex-wrap:wrap;gap:12px;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:54px;padding:15px 30px;border-radius:12px;font-weight:800;font-size:16px;text-decoration:none;transition:.15s;}
+  .btn-blue{background:var(--blue);color:#fff;box-shadow:0 8px 20px rgba(27,77,240,.22);}
+  .btn-blue:hover{background:var(--blue-dark);color:#fff;}
+  .btn-amber{background:var(--amber);color:#1A1400;}
+  .btn-amber:hover{background:#F0B517;color:#1A1400;}
+  .btn-line{border:2px solid var(--line);background:#fff;color:var(--ink);}
+  .btn-line:hover{border-color:var(--blue);color:var(--blue);}
+  .btns{display:flex;flex-wrap:wrap;gap:12px;}
 
   /* hero */
-  .hero{padding-top:clamp(56px,8vw,96px);}
-  .hero h1{margin:22px 0 24px;max-width:16ch;}
-  .hero .lead{max-width:52ch;}
-  .stats{display:flex;flex-wrap:wrap;gap:clamp(32px,6vw,72px);margin:44px 0 40px;}
-  .stat b{display:block;font-size:clamp(34px,5.5vw,52px);font-weight:800;letter-spacing:-.03em;line-height:1;}
-  .stat span{display:block;margin-top:8px;font-size:15px;color:var(--muted);}
-  .stat.accent b{color:var(--accent);}
+  .hero{background:linear-gradient(180deg,var(--blue-tint),#fff);padding-top:clamp(40px,5vw,64px);}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;}
+  .hero h1{margin:18px 0 18px;}
+  .hero .sub{max-width:46ch;}
+  .hero .btns{margin-top:32px;}
+  .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;}
+  .fact{display:flex;align-items:center;gap:8px;padding:9px 15px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:14px;font-weight:700;}
+  .fact svg{color:var(--blue);flex-shrink:0;}
+
+  /* hero art */
+  .art{position:relative;}
+  .win{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 24px 60px rgba(16,20,24,.12);}
+  .chrome{display:flex;align-items:center;gap:6px;height:38px;padding:0 14px;background:var(--surface);border-bottom:1px solid var(--line);}
+  .dot{width:9px;height:9px;border-radius:50%;background:#CFD6DC;}
+  .addr{flex:1;margin-left:8px;height:22px;border-radius:999px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;padding:0 12px;font-size:11px;font-weight:600;color:var(--muted);overflow:hidden;white-space:nowrap;}
+  .body-sk{padding:22px;display:flex;flex-direction:column;gap:10px;background:linear-gradient(180deg,#fff,var(--surface));min-height:250px;}
+  .sk{border-radius:5px;background:#E9EDF2;}
+  .badge{position:absolute;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 16px;box-shadow:0 12px 30px rgba(16,20,24,.12);font-size:14px;font-weight:800;display:flex;align-items:center;gap:9px;}
+  .badge b{color:var(--blue);}
+  .b1{top:-18px;right:8px;}
+  .b2{bottom:-20px;left:-14px;}
+
+  /* cards */
+  .cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:44px;}
+  .card{padding:26px;border:1px solid var(--line);border-radius:16px;background:#fff;}
+  .ico{width:46px;height:46px;border-radius:12px;background:var(--blue-soft);color:var(--blue);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+  .card p{margin-top:9px;color:var(--muted);font-size:15px;line-height:1.5;}
+
+  /* why grid */
+  .two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:44px;}
+  .why{padding:28px;border-radius:16px;background:var(--surface);border:1px solid var(--line);}
+  .why .num{font-size:14px;font-weight:800;color:var(--blue);letter-spacing:1px;}
+  .why h3{margin:10px 0 9px;}
+  .why p{color:var(--muted);font-size:15px;line-height:1.55;}
 
   /* demos */
-  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:44px;}
-  .demo{
-    display:block;text-decoration:none;color:var(--ink);background:#fff;
-    border:1px solid var(--line);border-radius:14px;overflow:hidden;
-    transition:border-color .15s ease,transform .15s ease,box-shadow .2s ease;
-  }
-  .demo:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 14px 30px rgba(16,20,24,.08);color:var(--ink);}
-  .chrome{display:flex;align-items:center;gap:7px;height:40px;padding:0 14px;background:var(--surface);border-bottom:1px solid var(--line);}
-  .dot{width:9px;height:9px;border-radius:50%;background:#CFD6DC;flex-shrink:0;}
-  .addr{
-    flex:1;margin-left:8px;height:23px;padding:0 12px;border-radius:999px;
-    background:#fff;border:1px solid var(--line);display:flex;align-items:center;
-    font-size:11px;font-weight:600;color:var(--muted);
-    overflow:hidden;white-space:nowrap;text-overflow:ellipsis;
-  }
-  .shot{aspect-ratio:16/10;padding:20px;display:flex;flex-direction:column;gap:9px;background:linear-gradient(180deg,#fff,var(--surface));}
-  .sk{border-radius:4px;background:#E8ECF0;flex-shrink:0;}
-  .sk-nav{height:8px;width:36%;background:#D6DCE2;}
-  .sk-h1{height:14px;width:76%;background:#C6CFD7;margin-top:6px;}
-  .sk-h2{height:14px;width:50%;background:#C6CFD7;}
-  .sk-line{height:7px;width:64%;}
-  .sk-btn{height:20px;width:100px;border-radius:999px;background:var(--accent);margin-top:4px;}
-  .sk-row{display:flex;gap:8px;margin-top:auto;}
-  .sk-tile{flex:1;height:26px;border-radius:5px;background:#E8ECF0;}
-  .demo-meta{padding:20px 22px 24px;}
-  .demo-meta p{color:var(--muted);font-size:15px;line-height:1.5;margin-top:8px;}
-  .demo-meta .open{display:inline-block;margin-top:14px;color:var(--accent);font-weight:700;font-size:15px;}
+  .demos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:44px;}
+  .demo{display:block;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;transition:.18s;}
+  .demo:hover{border-color:var(--blue);transform:translateY(-3px);box-shadow:0 18px 40px rgba(16,20,24,.10);color:var(--ink);}
+  .shot{aspect-ratio:16/10;background:var(--surface);border-bottom:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--muted);}
+  .shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;}
+  .shot .ph{font-size:15px;font-weight:800;letter-spacing:.5px;}
+  .shot .ph2{font-size:13px;font-weight:600;color:#98A2AC;}
+  .demo-txt{padding:20px 22px 24px;}
+  .demo-txt p{color:var(--muted);font-size:15px;margin-top:8px;}
+  .demo-txt .go{display:inline-block;margin-top:13px;color:var(--blue);font-weight:800;font-size:15px;}
 
-  /* lists */
-  .items{display:flex;flex-direction:column;gap:18px;margin-top:36px;}
-  .item{display:flex;gap:18px;align-items:flex-start;font-size:clamp(16px,2vw,19px);}
-  .item::before{content:"";width:22px;height:3px;border-radius:2px;background:var(--accent);flex-shrink:0;margin-top:.65em;}
-  .steps{display:flex;flex-direction:column;gap:30px;margin-top:40px;}
-  .step{display:flex;gap:22px;align-items:flex-start;}
-  .step b{font-size:16px;font-weight:800;color:var(--accent);flex-shrink:0;width:28px;padding-top:2px;}
-  .step p{color:var(--muted);font-size:15px;margin-top:6px;line-height:1.5;}
-  .note{margin-top:34px;padding-top:26px;border-top:1px solid var(--line);color:var(--muted);font-size:15px;}
+  /* checklist */
+  .split{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;}
+  .checks{display:flex;flex-direction:column;gap:16px;margin-top:30px;}
+  .chk{display:flex;gap:14px;align-items:flex-start;font-size:16px;}
+  .chk i{width:26px;height:26px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-style:normal;margin-top:1px;}
+  .chk b{font-weight:800;}
+  .chk span{display:block;color:var(--muted);font-size:14.5px;margin-top:3px;line-height:1.5;}
+  .panel{padding:32px;border-radius:20px;background:var(--blue-soft);border:1px solid #DDE3FF;}
+  .panel h3{font-size:22px;}
+  .panel p{color:#3D4A63;margin-top:12px;font-size:15.5px;line-height:1.6;}
 
-  /* alt surface */
-  .alt{background:var(--surface);}
+  /* includes */
+  .inc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 32px;margin-top:36px;}
+  .inc div{display:flex;gap:13px;align-items:flex-start;font-size:16.5px;}
+  .inc i{width:22px;height:22px;border-radius:50%;background:var(--blue-soft);color:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-style:normal;margin-top:3px;}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:44px;}
+  .step{padding:26px;border-radius:16px;background:#fff;border:1px solid var(--line);position:relative;}
+  .step .n{width:38px;height:38px;border-radius:11px;background:var(--blue);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:15px;}
+  .step p{color:var(--muted);font-size:14.5px;margin-top:8px;line-height:1.5;}
 
   /* about */
-  .about p{font-size:clamp(17px,2.2vw,20px);line-height:1.6;margin-top:20px;color:var(--muted);}
-  .about p.strong{color:var(--ink);font-weight:700;}
+  .about{max-width:760px;margin:0 auto;text-align:center;}
+  .about p{color:var(--muted);font-size:17px;margin-top:16px;line-height:1.65;}
+  .about p.lead{color:var(--ink);font-weight:700;font-size:clamp(19px,2.4vw,23px);line-height:1.45;}
 
-  /* cta */
-  .cta{background:var(--ink);color:#fff;}
-  .cta h2{color:#fff;max-width:18ch;}
-  .cta .lead{color:#9AA4AE;max-width:48ch;margin-top:22px;}
-  .cta .btn-ghost{border-color:#2A3138;color:#fff;background:transparent;}
-  .cta .btn-ghost:hover{border-color:#fff;color:#fff;}
-  .cta .btn-row{margin-top:40px;}
+  /* cta band */
+  .band{background:var(--blue);border-radius:24px;padding:clamp(36px,5vw,56px);color:#fff;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;}
+  .band h2{color:#fff;}
+  .band p{color:#C9D6FF;margin-top:14px;font-size:17px;}
+  .band .btns{margin-top:0;}
+  .band .btn-line{border-color:rgba(255,255,255,.35);background:transparent;color:#fff;}
+  .band .btn-line:hover{border-color:#fff;color:#fff;}
 
-  footer{padding:40px 0;font-size:14px;color:var(--muted);}
-  .foot{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between;}
-  .foot a{color:var(--muted);text-decoration:none;font-weight:600;}
-  .foot a:hover{color:var(--ink);}
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:44px 0 36px;margin-top:24px;}
+  .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;}
+  .fgrid h4{margin:0 0 14px;font-size:14px;font-weight:800;letter-spacing:.5px;}
+  .fgrid a,.fgrid p{display:block;color:var(--muted);text-decoration:none;font-size:15px;margin-bottom:9px;}
+  .fgrid a:hover{color:var(--blue);}
+  .copy{margin-top:32px;padding-top:22px;border-top:1px solid var(--line);color:#98A2AC;font-size:14px;}
 
-  @media (max-width:640px){
-    .grid{grid-template-columns:1fr;}
-    .bar .btn{display:none;}
+  @media (max-width:900px){
+    .hero-grid,.split,.about{grid-template-columns:1fr;gap:36px;}
+    .cards,.steps{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .band{grid-template-columns:1fr;}
+    .menu{display:none;}
+    .about{text-align:left;}
+    .ava{max-width:260px;}
+  }
+  @media (max-width:600px){
+    .cards,.steps,.two,.demos,.inc,.fgrid{grid-template-columns:1fr;}
     .btn{width:100%;}
-    .btn-row{flex-direction:column;}
+    .btns{flex-direction:column;}
+    .b1,.b2{display:none;}
   }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="wrap bar">
-    <a class="brand" href="#top"><span></span>Сайти лікарям</a>
-    <a class="btn btn-primary" href="https://t.me/Olexandr_Kozharko" target="_blank" rel="noopener">Написати</a>
+  <div class="wrap nav">
+    <a class="logo" href="#top">сайти<i></i></a>
+    <nav class="menu">
+      <a href="#why">Навіщо сайт</a>
+      <a href="#works">Приклади</a>
+      <a href="#us">Чому ми</a>
+      <a href="#price">Ціна</a>
+      <a href="#how">Як працюємо</a>
+    </nav>
+    <a class="btn btn-blue" href="https://t.me/Olexandr_Kozharko" target="_blank" rel="noopener">Написати</a>
   </div>
 </header>
 
 <main id="top">
 
-  <section class="hero">
-    <div class="wrap">
-      <div class="eyebrow">Сайти для приватних лікарів</div>
-      <h1>Сайт-візитка для лікаря за 3 робочі дні</h1>
-      <p class="lead">Пацієнт бачить ваші послуги, ціни та відгуки — і записується одразу, не гортаючи стрічку й не чекаючи відповіді в директі.</p>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="tag">Тільки для лікарів</span>
+      <h1>Професійний сайт для приватного лікаря — за 3 робочі дні</h1>
+      <p class="sub">Пацієнт бачить ваші послуги, ціни та відгуки — і записується одразу, замість того щоб гортати стрічку й чекати відповіді в директі.</p>
 
-      <div class="stats">
-        <div class="stat accent"><b>200 $</b><span>вартість під ключ</span></div>
-        <div class="stat"><b>3 дні</b><span>робочих, від передоплати</span></div>
-        <div class="stat"><b>1 раунд</b><span>правок після здачі</span></div>
+      <div class="facts">
+        <span class="fact"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>200 $ фіксовано</span>
+        <span class="fact"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>3 робочі дні</span>
+        <span class="fact"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Сайт оформлюється на вас</span>
       </div>
 
-      <div class="btn-row">
-        <a class="btn btn-primary" href="https://t.me/Olexandr_Kozharko" target="_blank" rel="noopener">Написати в Telegram</a>
-        <a class="btn btn-ghost" href="https://instagram.com/sajty.likaryam" target="_blank" rel="noopener">Написати в Instagram</a>
+      <div class="btns">
+        <a class="btn btn-blue" href="https://t.me/Olexandr_Kozharko" target="_blank" rel="noopener">Написати в Telegram</a>
+        <a class="btn btn-line" href="#works">Подивитись приклади</a>
       </div>
     </div>
-  </section>
 
-  <hr class="rule">
+    <div class="art">
+      <div class="win">
+        <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="addr">сайт-вашого-імені.com</span></div>
+        <div class="body-sk">
+          <div class="sk" style="height:9px;width:34%;background:#D8DEE6"></div>
+          <div class="sk" style="height:17px;width:78%;background:#C7CFDA;margin-top:8px"></div>
+          <div class="sk" style="height:17px;width:54%;background:#C7CFDA"></div>
+          <div class="sk" style="height:8px;width:66%"></div>
+          <div class="sk" style="height:34px;width:150px;border-radius:999px;background:#1B4DF0;margin-top:10px"></div>
+          <div style="display:flex;gap:10px;margin-top:auto">
+            <div class="sk" style="height:44px;flex:1"></div>
+            <div class="sk" style="height:44px;flex:1"></div>
+            <div class="sk" style="height:44px;flex:1"></div>
+          </div>
+        </div>
+      </div>
+      <div class="badge b1">Готово за <b>3 дні</b></div>
+      <div class="badge b2">Запис у <b>1 дотик</b></div>
+    </div>
+  </div>
+</section>
 
-  <section>
-    <div class="wrap">
-      <div class="eyebrow">Приклади робіт</div>
-      <h2 style="margin-top:22px">Як виглядає готовий сайт</h2>
-      <p class="lead" style="margin-top:20px;max-width:60ch">Це демонстраційні сайти, зроблені для вигаданих лікарів — щоб показати структуру й рівень роботи. Відкривайте з телефона: більшість ваших пацієнтів дивитиметься саме так.</p>
-
-      <div class="grid">
-
-        <a class="demo" href="https://sajty-likaryam.vercel.app/stomatolog.html" target="_blank" rel="noopener">
-          <div class="chrome">
-            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-            <span class="addr">sajty-likaryam.vercel.app/stomatolog.html</span>
-          </div>
-          <div class="shot">
-            <div class="sk sk-nav"></div>
-            <div class="sk sk-h1"></div>
-            <div class="sk sk-h2"></div>
-            <div class="sk sk-btn"></div>
-            <div class="sk-row"><div class="sk-tile"></div><div class="sk-tile"></div><div class="sk-tile"></div></div>
-          </div>
-          <div class="demo-meta">
-            <h3>Стоматологія</h3>
-            <p>Лікування під мікроскопом, перелік послуг із цінами, кнопки запису.</p>
-            <span class="open">Відкрити приклад →</span>
-          </div>
-        </a>
-
-        <a class="demo" href="https://sajty-likaryam.vercel.app/kosmetolog.html" target="_blank" rel="noopener">
-          <div class="chrome">
-            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-            <span class="addr">sajty-likaryam.vercel.app/kosmetolog.html</span>
-          </div>
-          <div class="shot">
-            <div class="sk sk-nav" style="width:44%"></div>
-            <div class="sk sk-h1" style="width:68%"></div>
-            <div class="sk sk-line"></div>
-            <div class="sk sk-btn" style="width:118px"></div>
-            <div class="sk-row"><div class="sk-tile"></div><div class="sk-tile"></div></div>
-          </div>
-          <div class="demo-meta">
-            <h3>Косметологія та дерматологія</h3>
-            <p>Процедури, фото робіт, відгуки пацієнтів, онлайн-запис.</p>
-            <span class="open">Відкрити приклад →</span>
-          </div>
-        </a>
-
-        <a class="demo" href="https://sajty-likaryam.vercel.app/uzd.html" target="_blank" rel="noopener">
-          <div class="chrome">
-            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-            <span class="addr">sajty-likaryam.vercel.app/uzd.html</span>
-          </div>
-          <div class="shot">
-            <div class="sk sk-nav" style="width:30%"></div>
-            <div class="sk sk-h1" style="width:82%"></div>
-            <div class="sk sk-h2" style="width:44%"></div>
-            <div class="sk sk-line" style="width:56%"></div>
-            <div class="sk-row"><div class="sk-tile"></div><div class="sk-tile"></div><div class="sk-tile"></div><div class="sk-tile"></div></div>
-          </div>
-          <div class="demo-meta">
-            <h3>УЗД-діагностика</h3>
-            <p>Види обстежень, як підготуватись, графік прийому й запис.</p>
-            <span class="open">Відкрити приклад →</span>
-          </div>
-        </a>
-
-        <a class="demo" href="https://sajty-likaryam.vercel.app/nevrolog.html" target="_blank" rel="noopener">
-          <div class="chrome">
-            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-            <span class="addr">sajty-likaryam.vercel.app/nevrolog.html</span>
-          </div>
-          <div class="shot">
-            <div class="sk sk-nav" style="width:40%"></div>
-            <div class="sk sk-h1" style="width:72%"></div>
-            <div class="sk sk-line" style="width:70%"></div>
-            <div class="sk sk-line" style="width:48%"></div>
-            <div class="sk sk-btn" style="width:92px"></div>
-            <div class="sk-row"><div class="sk-tile"></div><div class="sk-tile"></div></div>
-          </div>
-          <div class="demo-meta">
-            <h3>Неврологія</h3>
-            <p>Консультації, з якими симптомами звертатись, як проходить прийом.</p>
-            <span class="open">Відкрити приклад →</span>
-          </div>
-        </a>
-
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="cards">
+      <div class="card">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/></svg></div>
+        <h3>Тільки лікарям</h3>
+        <p>Не універсальна студія. Знаємо, що має бути на сторінці стоматолога, а що — на сторінці УЗД.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Три робочі дні</h3>
+        <p>Не тижні узгоджень. Ви заповнюєте анкету за 15 хвилин, решту робимо ми.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3>200 $ фіксовано</h3>
+        <p>Без «від» і без дописаних робіт у кінці. Ціна названа до старту й не змінюється.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+        <h3>Сайт ваш</h3>
+        <p>Домен і доступи оформлюються на вас. Не залишаються в підрядника, як це часто буває.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="alt">
-    <div class="wrap">
-      <div class="eyebrow">Оффер</div>
-      <h2 style="margin-top:22px">Що входить у 200 $</h2>
+<section id="why" style="background:var(--surface)">
+  <div class="wrap">
+    <div class="center">
+      <span class="tag">Навіщо</span>
+      <h2 style="margin-top:16px">Навіщо лікарю сайт, якщо є Instagram</h2>
+      <p class="sub">Сайт не замінює Instagram. Він працює там, де Instagram не працює.</p>
+    </div>
 
-      <div class="items">
-        <div class="item">Односторінковий сайт під ключ</div>
-        <div class="item">Опис послуг і ваші ціни</div>
-        <div class="item">Ваші фото та відгуки пацієнтів</div>
-        <div class="item">Кнопки запису: Instagram, Telegram, Viber, дзвінок</div>
-        <div class="item">Коректна робота на телефоні</div>
-        <div class="item">Один раунд правок після здачі</div>
+    <div class="two">
+      <div class="why">
+        <div class="num">01</div>
+        <h3>Стрічка гортається — сайт ні</h3>
+        <p>Пост із цінами губиться за два тижні. Пацієнт, який шукає вартість консультації, гортає до кінця й не знаходить. На сайті ця інформація лежить там, де ви її поклали.</p>
       </div>
-
-      <p class="note">Домен і робоча пошта оплачуються окремо й оформлюються на вас. Сайт залишається вашим — я не тримаю його в себе.</p>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="eyebrow">Процес</div>
-      <h2 style="margin-top:22px">Як проходить робота</h2>
-
-      <div class="steps">
-        <div class="step"><b>01</b><div><h3>Бриф-анкета</h3><p>10 питань про вашу практику. Приблизно 15 хвилин вашого часу.</p></div></div>
-        <div class="step"><b>02</b><div><h3>Готовий сайт</h3><p>Три робочі дні від передоплати. Присилаю посилання, ви дивитесь із телефона.</p></div></div>
-        <div class="step"><b>03</b><div><h3>Один раунд правок</h3><p>Збираєте всі побажання одним списком — я вношу їх разом.</p></div></div>
-        <div class="step"><b>04</b><div><h3>Передача доступів</h3><p>Сайт і домен переходять до вас. Далі ви ні від кого не залежите.</p></div></div>
+      <div class="why">
+        <div class="num">02</div>
+        <h3>Пацієнт гуглить ваше ім'я</h3>
+        <p>Перед записом до незнайомого лікаря люди шукають у Google — читають, порівнюють, перевіряють. Якщо там нічого немає, рішення ухвалюють на користь того, у кого є.</p>
       </div>
-
-      <p class="note">Передоплата 50% до старту, решта — до передачі доступів.</p>
-    </div>
-  </section>
-
-  <section class="alt">
-    <div class="wrap">
-      <div class="eyebrow">Навіщо</div>
-      <h2 style="margin-top:22px">Навіщо сайт, якщо є Instagram</h2>
-
-      <div class="steps">
-        <div class="step"><b>01</b><div><h3>Стрічка гортається — сайт ні</h3><p>Пост із цінами губиться за два тижні. На сайті він лежить там, де ви його поклали.</p></div></div>
-        <div class="step"><b>02</b><div><h3>Пацієнт гуглить ваше ім'я</h3><p>Перед записом до незнайомого лікаря людина шукає в Google. Там має бути що знайти.</p></div></div>
-        <div class="step"><b>03</b><div><h3>Одне посилання в переписці</h3><p>Замість «погортайте профіль» — адреса, яку не соромно надіслати колезі чи пацієнту.</p></div></div>
+      <div class="why">
+        <div class="num">03</div>
+        <h3>Одне посилання замість пояснень</h3>
+        <p>У переписці, на візитці, у профілі — адреса, яку не соромно надіслати колезі чи пацієнту. Замість «погортайте профіль, там десь було».</p>
       </div>
-
-      <p class="note">Сайт не замінює Instagram. Він працює там, де Instagram не працює.</p>
-    </div>
-  </section>
-
-  <section class="about">
-    <div class="wrap">
-      <div class="eyebrow">Хто робить</div>
-      <h2 style="margin-top:22px">Мене звати Саша</h2>
-      <p class="strong">Я роблю сайти приватним лікарям — і більше нічого.</p>
-      <p>Не агенція і не студія: ви пишете мені, і зі мною ж працюєте до кінця. Без менеджерів, без пересилання завдань між людьми, без «ваш проєкт у черзі».</p>
-      <p>Тому 200 $, а не 800 $. І три дні, а не місяць.</p>
-    </div>
-  </section>
-
-  <section class="cta">
-    <div class="wrap">
-      <div class="eyebrow" style="color:#fff">Наступний крок</div>
-      <h2 style="margin-top:22px">Напишіть — покажу приклад під вашу спеціальність</h2>
-      <p class="lead">Розкажіть у двох реченнях, чим займаєтесь, і я скажу, що саме має бути на вашому сайті. Це безкоштовно й ні до чого не зобов'язує.</p>
-      <div class="btn-row">
-        <a class="btn btn-primary" href="https://t.me/Olexandr_Kozharko" target="_blank" rel="noopener">Написати в Telegram</a>
-        <a class="btn btn-ghost" href="https://instagram.com/sajty.likaryam" target="_blank" rel="noopener">Написати в Instagram</a>
+      <div class="why">
+        <div class="num">04</div>
+        <h3>Конкуренти вже там</h3>
+        <p>У кожному місті вже є лікарі вашого профілю із сайтом. Пацієнт не порівнює вас із ними за професійністю — він просто не доходить до вас у пошуку.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<section id="works">
+  <div class="wrap">
+    <div class="center">
+      <span class="tag">Приклади</span>
+      <h2 style="margin-top:16px">Як виглядає готовий сайт</h2>
+      <p class="sub">Це демонстраційні сайти, зроблені для вигаданих лікарів — щоб показати структуру й рівень роботи. Відкривайте з телефона: більшість ваших пацієнтів дивитиметься саме так.</p>
+    </div>
+
+    <div class="demos">
+      <a class="demo" href="https://sajty-likaryam.vercel.app/stomatolog.html" target="_blank" rel="noopener">
+        <div class="shot"><span class="ph">[СКРІНШОТ: СТОМАТОЛОГІЯ]</span><span class="ph2">shot-stomatolog.png</span></div>
+        <div class="demo-txt"><h3>Стоматологія</h3><p>Лікування під мікроскопом, послуги з цінами, кнопки запису на кожному екрані.</p><span class="go">Відкрити приклад →</span></div>
+      </a>
+      <a class="demo" href="https://sajty-likaryam.vercel.app/kosmetolog.html" target="_blank" rel="noopener">
+        <div class="shot"><span class="ph">[СКРІНШОТ: КОСМЕТОЛОГІЯ]</span><span class="ph2">shot-kosmetolog.png</span></div>
+        <div class="demo-txt"><h3>Косметологія та дерматологія</h3><p>Процедури, фото робіт, відгуки пацієнтів, онлайн-запис.</p><span class="go">Відкрити приклад →</span></div>
+      </a>
+      <a class="demo" href="https://sajty-likaryam.vercel.app/uzd.html" target="_blank" rel="noopener">
+        <div class="shot"><span class="ph">[СКРІНШОТ: УЗД]</span><span class="ph2">shot-uzd.png</span></div>
+        <div class="demo-txt"><h3>УЗД-діагностика</h3><p>Види обстежень, підготовка до кожного, графік прийому й запис.</p><span class="go">Відкрити приклад →</span></div>
+      </a>
+      <a class="demo" href="https://sajty-likaryam.vercel.app/nevrolog.html" target="_blank" rel="noopener">
+        <div class="shot"><span class="ph">[СКРІНШОТ: НЕВРОЛОГІЯ]</span><span class="ph2">shot-nevrolog.png</span></div>
+        <div class="demo-txt"><h3>Неврологія</h3><p>Консультації, з якими симптомами звертатись, як проходить прийом.</p><span class="go">Відкрити приклад →</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="us" style="background:var(--surface)">
+  <div class="wrap split">
+    <div>
+      <span class="tag">Чому ми</span>
+      <h2 style="margin-top:16px">Чому саме в нас</h2>
+      <p class="sub" style="margin-top:14px">Сайт лікарю може зробити будь-хто. Різниця в тому, що буде після здачі.</p>
+
+      <div class="checks">
+        <div class="chk"><i><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><div><b>Працюємо тільки з лікарями</b><span>Не робимо сайти піцеріям і автосервісам. Тому не питаємо у вас, що таке дерматоскопія.</span></div></div>
+        <div class="chk"><i><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><div><b>Домен і доступи — на вас</b><span>Найчастіша скарга на підрядників: сайт зроблено на їхньому акаунті, і піти неможливо. У нас усе оформлюється на ваше ім'я одразу.</span></div></div>
+        <div class="chk"><i><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><div><b>Ціна не змінюється в процесі</b><span>200 $ названо до старту. Без «це виявилось складніше» на етапі здачі.</span></div></div>
+        <div class="chk"><i><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><div><b>Від вас — 15 хвилин</b><span>Анкета з 10 питань. Тексти, структуру й верстку беремо на себе.</span></div></div>
+        <div class="chk"><i><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><div><b>Пишете напряму виконавцю</b><span>Без менеджерів і пересилання завдань. Той, з ким ви говорите, і робить ваш сайт.</span></div></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Скільки це коштує деінде</h3>
+      <p>Агенція за сайт-візитку лікаря просить від 800 $ і 3–6 тижнів. Конструктор коштує дешевше, але робити його доведеться вам самим — і виглядатиме він як конструктор.</p>
+      <p>Ми між цими варіантами: робота під ключ, як в агенції, але за 200 $ і за три дні. Так виходить тому, що ми робимо один тип сайтів і не тримаємо офіс.</p>
+    </div>
+  </div>
+</section>
+
+<section id="price">
+  <div class="wrap">
+    <div class="center">
+      <span class="tag">Ціна</span>
+      <h2 style="margin-top:16px">Що входить у 200 $</h2>
+    </div>
+
+    <div class="inc">
+      <div><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i>Односторінковий сайт під ключ</div>
+      <div><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i>Опис послуг і ваші ціни</div>
+      <div><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i>Ваші фото та відгуки пацієнтів</div>
+      <div><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i>Кнопки запису: Instagram, Telegram, Viber, дзвінок</div>
+      <div><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i>Коректна робота на телефоні</div>
+      <div><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i>Один раунд правок після здачі</div>
+    </div>
+
+    <p class="sub" style="margin-top:32px;padding-top:26px;border-top:1px solid var(--line)">Домен і робоча пошта оплачуються окремо, за тарифами реєстратора, і оформлюються на вас. Передоплата 50% до старту, решта — до передачі доступів.</p>
+  </div>
+</section>
+
+<section id="how" style="background:var(--surface)">
+  <div class="wrap">
+    <div class="center">
+      <span class="tag">Процес</span>
+      <h2 style="margin-top:16px">Як ми працюємо</h2>
+      <p class="sub">Чотири кроки, з яких ваша участь потрібна тільки в першому й третьому.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Бриф</h3><p>10 питань про вашу практику. Приблизно 15 хвилин вашого часу.</p></div>
+      <div class="step"><div class="n">2</div><h3>Готовий сайт</h3><p>Три робочі дні від передоплати. Присилаємо посилання, ви дивитесь із телефона.</p></div>
+      <div class="step"><div class="n">3</div><h3>Раунд правок</h3><p>Збираєте побажання одним списком — вносимо їх разом.</p></div>
+      <div class="step"><div class="n">4</div><h3>Передача</h3><p>Сайт і домен переходять до вас. Далі ви ні від кого не залежите.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="about">
+      <span class="tag">Хто робить</span>
+      <h2 style="margin-top:16px">Олександр</h2>
+      <p class="lead">Роблю сайти приватним лікарям — і більше нічого.</p>
+      <p>Один тип задачі, доведений до конвеєра: тому три дні, а не місяць, і 200 $, а не 800 $. Ви пишете напряму виконавцю й з ним же працюєте до передачі доступів — без менеджерів і черги.</p>
+      <p>Якщо після брифу стане зрозуміло, що сайт вам зараз не потрібен, я так і скажу. Продавати те, що не спрацює, невигідно нам обом.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="band">
+      <div>
+        <h2>Покажемо приклад під вашу спеціальність</h2>
+        <p>Напишіть у двох реченнях, чим займаєтесь — відповімо, що саме має бути на вашому сайті. Безкоштовно й ні до чого не зобов'язує.</p>
+      </div>
+      <div class="btns">
+        <a class="btn btn-amber" href="https://t.me/Olexandr_Kozharko" target="_blank" rel="noopener">Написати в Telegram</a>
+        <a class="btn btn-line" href="https://instagram.com/sajty.likaryam" target="_blank" rel="noopener">Написати в Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 </main>
 
-<hr class="rule">
-
 <footer>
-  <div class="wrap foot">
-    <div>Сайти для приватних лікарів</div>
-    <div style="display:flex;gap:24px">
-      <a href="https://t.me/Olexandr_Kozharko" target="_blank" rel="noopener">Telegram</a>
-      <a href="https://instagram.com/sajty.likaryam" target="_blank" rel="noopener">Instagram</a>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="logo" href="#top" style="margin-bottom:14px">сайти<i></i></a>
+        <p>Сайти-візитки для приватних лікарів. Три робочі дні, 200 $ під ключ.</p>
+      </div>
+      <div>
+        <h4>Розділи</h4>
+        <a href="#why">Навіщо сайт</a>
+        <a href="#works">Приклади робіт</a>
+        <a href="#us">Чому саме в нас</a>
+        <a href="#price">Що входить у ціну</a>
+      </div>
+      <div>
+        <h4>Зв'язатися</h4>
+        <a href="https://t.me/Olexandr_Kozharko" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://instagram.com/sajty.likaryam" target="_blank" rel="noopener">Instagram</a>
+      </div>
     </div>
+    <div class="copy">Олександр · Сайти для приватних лікарів</div>
   </div>
 </footer>
 
