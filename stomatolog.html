@@ -14,218 +14,156 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap">
 <style>
-  :root{--ink:#101418;--muted:#5B6673;--line:#E4E7EB;--surface:#F7F9FB;
-    --a:#0E7C86;--a-dark:#0E7C86CC;--tint:#EFF8F9;--soft:#E2F1F3;--wrap:1120px;}
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
-  body{margin:0;background:#fff;color:var(--ink);font-family:'Manrope',system-ui,-apple-system,sans-serif;font-weight:500;line-height:1.55;-webkit-font-smoothing:antialiased;}
-  a{color:var(--a);}
-  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px;}
-  section{padding:clamp(52px,6.5vw,86px) 0;}
-  h1,h2,h3{margin:0;letter-spacing:-.03em;font-weight:800;line-height:1.09;}
-  h1{font-size:clamp(31px,5vw,50px);}
-  h2{font-size:clamp(25px,3.6vw,38px);}
-  h3{font-size:18px;letter-spacing:-.02em;line-height:1.3;}
-  p{margin:0;}
-  .sub{color:var(--muted);font-size:clamp(16px,1.9vw,18.5px);}
-  .center{text-align:center;}
-  .center .sub{max-width:60ch;margin:15px auto 0;}
-  .tag{display:inline-block;padding:7px 15px;border-radius:999px;background:var(--soft);color:var(--a);font-size:12.5px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;}
-  .demo-bar{background:#101418;color:#fff;font-size:13.5px;font-weight:600;padding:11px 20px;text-align:center;line-height:1.45;}
-  .demo-bar b{color:#FFC531;}
-  header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line);}
-  .nav{display:flex;align-items:center;gap:26px;height:64px;}
-  .logo{font-weight:800;font-size:18px;letter-spacing:-.03em;color:var(--ink);text-decoration:none;line-height:1.15;}
-  .logo span{display:block;font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.02em;}
-  .menu{display:flex;gap:22px;margin-left:auto;}
-  .menu a{color:var(--muted);text-decoration:none;font-size:14.5px;font-weight:600;}
-  .menu a:hover{color:var(--ink);}
-  .nav .btn{padding:10px 20px;min-height:0;font-size:14.5px;}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:14px 28px;border-radius:12px;font-weight:800;font-size:15.5px;text-decoration:none;transition:.15s;}
-  .btn-a{background:var(--a);color:#fff;box-shadow:0 8px 20px #0E7C8633;}
-  .btn-a:hover{filter:brightness(.92);color:#fff;}
-  .btn-line{border:2px solid var(--line);background:#fff;color:var(--ink);}
-  .btn-line:hover{border-color:var(--a);color:var(--a);}
-  .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;}
-  .hero{background:linear-gradient(180deg,var(--tint),#fff);padding-top:clamp(38px,4.5vw,60px);}
-  .hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:52px;align-items:center;}
-  .hero h1{margin:17px 0 17px;}
-  .hero .sub{max-width:44ch;}
-  .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;}
-  .fact{padding:9px 15px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:13.5px;font-weight:700;}
-  .art{position:relative;}
-  .portrait{aspect-ratio:4/5;border-radius:22px;background:var(--soft);border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;text-align:center;padding:26px;}
-  .portrait .ph{font-size:14.5px;font-weight:800;color:var(--a);letter-spacing:.4px;}
-  .portrait .ph2{font-size:13px;font-weight:600;color:var(--muted);}
-  .badge{position:absolute;background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 17px;box-shadow:0 12px 30px rgba(16,20,24,.13);font-size:13.5px;font-weight:800;}
-  .badge b{color:var(--a);display:block;font-size:19px;margin-bottom:2px;}
-  .b1{top:22px;left:-22px;}
-  .b2{bottom:26px;right:-18px;}
-  .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:42px;}
-  .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:42px;}
-  .card{padding:26px;border:1px solid var(--line);border-radius:16px;background:#fff;}
-  .card p{margin-top:9px;color:var(--muted);font-size:14.5px;line-height:1.55;}
-  .ico{width:44px;height:44px;border-radius:12px;background:var(--soft);color:var(--a);display:flex;align-items:center;justify-content:center;margin-bottom:15px;}
-  .price-list{margin-top:42px;border:1px solid var(--line);border-radius:18px;overflow:hidden;}
-  .row{display:flex;gap:20px;align-items:baseline;padding:20px 26px;border-bottom:1px solid var(--line);}
-  .row:last-child{border-bottom:none;}
-  .row .n{font-weight:700;font-size:16.5px;flex:1;}
-  .row .n span{display:block;color:var(--muted);font-size:14px;font-weight:500;margin-top:4px;line-height:1.5;}
-  .row .p{font-weight:800;font-size:17px;color:var(--a);white-space:nowrap;}
-  .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:42px;}
-  .step{padding:24px;border-radius:16px;background:#fff;border:1px solid var(--line);}
-  .step .n{width:36px;height:36px;border-radius:11px;background:var(--a);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
-  .step p{color:var(--muted);font-size:14px;margin-top:7px;line-height:1.5;}
-  .rev{padding:26px;border-radius:16px;background:#fff;border:1px solid var(--line);}
-  .rev p{font-size:15.5px;line-height:1.6;}
-  .rev .who{margin-top:16px;padding-top:15px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted);font-weight:600;}
-  .stars{color:var(--a);letter-spacing:2px;font-size:14px;margin-bottom:11px;}
-  .about-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:46px;align-items:center;}
-  .about-g p{color:var(--muted);font-size:16.5px;margin-top:14px;line-height:1.65;}
-  .band{background:var(--a);border-radius:24px;padding:clamp(34px,4.6vw,54px);color:#fff;text-align:center;}
-  .band h2{color:#fff;}
-  .band p{color:#ffffffcc;margin-top:14px;font-size:16.5px;max-width:52ch;margin-left:auto;margin-right:auto;}
-  .band .btns{justify-content:center;}
-  .band .btn-w{background:#fff;color:var(--a);}
-  .band .btn-o{border:2px solid #ffffff55;color:#fff;}
-  footer{border-top:1px solid var(--line);padding:38px 0 34px;color:var(--muted);font-size:14.5px;}
-  .foot{display:flex;flex-wrap:wrap;gap:14px 26px;justify-content:space-between;align-items:center;}
-  @media (max-width:900px){
-    .hero-grid,.about-g{grid-template-columns:1fr;gap:34px;}
-    .grid3,.steps{grid-template-columns:repeat(2,minmax(0,1fr));}
-    .menu{display:none;}
-    .b1,.b2{display:none;}
-    .portrait{max-width:340px;}
-  }
-  @media (max-width:600px){
-    .grid3,.grid2,.steps{grid-template-columns:1fr;}
-    .btn{width:100%;}
-    .btns{flex-direction:column;}
-    .row{flex-direction:column;gap:7px;}
-  }</style>
+:root{--ink:#0E1114;--muted:#59636E;--line:#DFE3E7;--bg:#F4F6F8;--a:#0E7C86;--soft:#E2F1F3;}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--ink);font-family:'Manrope',system-ui,sans-serif;font-weight:500;line-height:1.5;-webkit-font-smoothing:antialiased;font-size:16px}
+a{color:var(--a)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:clamp(44px,5vw,68px) 0}
+h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.032em;line-height:1.08}
+h1{font-size:clamp(30px,4.4vw,46px)}
+h2{font-size:clamp(23px,3vw,32px)}
+h3{font-size:17px;letter-spacing:-.018em;line-height:1.28}
+p{margin:0}
+.demo-bar{background:#0E1114;color:#fff;font-size:13px;font-weight:600;padding:10px 20px;text-align:center;line-height:1.45}
+.demo-bar b{color:#FFC531}
+.lbl{font-size:11.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--a)}
+header{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:22px;height:62px}
+.logo{font-weight:800;font-size:17px;letter-spacing:-.03em;color:var(--ink);text-decoration:none;line-height:1.15}
+.logo span{display:block;font-size:11.5px;font-weight:600;color:var(--muted)}
+.menu{display:flex;gap:20px;margin-left:auto}
+.menu a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:700}
+.menu a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 24px;border-radius:8px;font-weight:800;font-size:15px;text-decoration:none;transition:.15s;border:2px solid transparent}
+.nav .btn{min-height:40px;padding:8px 18px;font-size:14px}
+.btn-a{background:var(--a);color:#fff}
+.btn-a:hover{filter:brightness(.9);color:#fff}
+.btn-l{border-color:var(--line);color:var(--ink);background:#fff}
+.btn-l:hover{border-color:var(--a);color:var(--a)}
+.hero{border-bottom:1px solid var(--line);padding:clamp(38px,4.5vw,58px) 0 clamp(38px,4.5vw,54px)}
+.hero-g{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:start}
+.hero h1{margin:14px 0 16px}
+.hero .sub{color:var(--muted);font-size:17px;max-width:46ch}
+.hero .btns{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap}
+.pcard{border:2px solid var(--ink);border-radius:12px;overflow:hidden}
+.pcard .ph{background:var(--ink);color:#fff;padding:14px 20px;font-size:13px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}
+.pcard .pr{display:flex;justify-content:space-between;gap:16px;padding:13px 20px;border-bottom:1px solid var(--line);font-size:14.5px;font-weight:700}
+.pcard .pr:last-of-type{border-bottom:none}
+.pcard .pr b{color:var(--a);white-space:nowrap}
+.pcard .pf{padding:13px 20px;background:var(--bg);font-size:13px;color:var(--muted);font-weight:600}
+.tbl{margin-top:26px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.tr{display:flex;gap:20px;align-items:baseline;padding:17px 22px;border-bottom:1px solid var(--line)}
+.tr:nth-child(even){background:var(--bg)}
+.tr:last-child{border-bottom:none}
+.tr .n{flex:1;font-weight:700;font-size:16px}
+.tr .n span{display:block;color:var(--muted);font-size:13.5px;font-weight:500;margin-top:3px;line-height:1.45}
+.tr .p{font-weight:800;font-size:17px;color:var(--a);white-space:nowrap}
+.note{margin-top:16px;font-size:13.5px;color:var(--muted)}
+.usp{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.usp>div{padding:28px 26px 30px;border-right:1px solid var(--line)}
+.usp>div:last-child{border-right:none}
+.usp .num{font-size:12px;font-weight:800;color:var(--a);letter-spacing:1.5px;margin-bottom:12px}
+.usp p{margin-top:9px;color:var(--muted);font-size:14.5px;line-height:1.55}
+.tl{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:34px;border-left:1px solid var(--line)}
+.tl>div{padding:0 22px;border-right:1px solid var(--line)}
+.tl .n{width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.tl p{margin-top:7px;color:var(--muted);font-size:14px;line-height:1.5}
+.ab{display:grid;grid-template-columns:1.25fr .75fr;gap:44px;align-items:start}
+.ab p{color:var(--muted);font-size:16px;margin-top:13px;line-height:1.65}
+.ph-box{aspect-ratio:4/5;border:1px dashed #C3CAD2;border-radius:10px;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;text-align:center;padding:22px;font-size:13px;font-weight:700;color:var(--muted)}
+.ph-box b{color:var(--a);font-size:13.5px;letter-spacing:.5px}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
+.rev{border:1px solid var(--line);border-radius:12px;padding:22px}
+.rev p{font-size:15px;line-height:1.6}
+.rev .w{margin-top:14px;padding-top:13px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted);font-weight:700}
+.cta{background:var(--ink);color:#fff;border-radius:14px;padding:clamp(30px,4vw,46px);display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center}
+.cta h2{color:#fff}
+.cta p{color:#ffffffb8;margin-top:12px;font-size:16px}
+.cta .btns{display:flex;flex-direction:column;gap:10px}
+.cta .btn-w{background:#fff;color:var(--ink)}
+.cta .btn-o{border-color:#ffffff44;color:#fff}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:14px}
+.foot{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between}
+@media(max-width:920px){.hero-g,.ab,.cta{grid-template-columns:1fr;gap:30px}.usp,.tl{grid-template-columns:1fr 1fr}.menu{display:none}.tl{border-left:none}.tl>div{border-right:none;border-left:1px solid var(--line);padding-bottom:22px}}
+@media(max-width:620px){.usp,.tl,.revs{grid-template-columns:1fr}.usp>div{border-right:none;border-bottom:1px solid var(--line)}.tr{flex-direction:column;gap:6px}.btn{width:100%}}</style>
 </head>
 <body>
-
 <div class="demo-bar"><b>Демонстраційний сайт.</b> Лікаря з таким іменем не існує — сторінку зроблено як приклад роботи, контакти неактивні.</div>
-
-<header>
-  <div class="wrap nav">
-    <a class="logo" href="#top">Юлія Савчук<span>стоматолог-терапевт · Рівне</span></a>
-    <nav class="menu">
-      <a href="#services">Послуги та ціни</a>
-      <a href="#how">Як проходить</a>
-      <a href="#about">Про лікаря</a>
-      <a href="#reviews">Відгуки</a>
-    </nav>
-    <a class="btn btn-a" href="#zapys">Записатись</a>
-  </div>
-</header>
+<header><div class="wrap nav">
+  <a class="logo" href="#top">Юлія Савчук<span>стоматолог-терапевт · Рівне</span></a>
+  <nav class="menu"><a href="#ceny">Ціни</a><a href="#how">Як проходить</a><a href="#about">Про лікаря</a><a href="#rev">Відгуки</a></nav>
+  <a class="btn btn-a" href="#zapys">Записатись</a>
+</div></header>
 
 <main id="top">
-
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="tag">Лікування під мікроскопом</span>
-      <h1>Зберігаємо зуб там, де інші пропонують видалення</h1>
-      <p class="sub">Лікування кореневих каналів під мікроскопом — коли лікар бачить те, чого не видно неозброєним оком. Терапевтична стоматологія для дорослих.</p>
-      <div class="facts"><span class="fact">8 років практики</span><span class="fact">Робота під мікроскопом</span><span class="fact">Лікування без болю</span></div>
-      <div class="btns">
-        <a class="btn btn-a" href="#zapys">Записатись на прийом</a>
-        <a class="btn btn-line" href="#services">Послуги та ціни</a>
-      </div>
-    </div>
-    <div class="art">
-      <div class="portrait"><span class="ph">[ФОТО ЛІКАРЯ]</span><span class="ph2">портрет у кабінеті<br>або на світлому фоні</span></div>
-      <div class="badge b1"><b>60 хв</b>середній прийом</div>
-      <div class="badge b2"><b>3D</b>знімок перед лікуванням</div>
-    </div>
+<section class="hero"><div class="wrap hero-g">
+  <div>
+    <span class="lbl">Лікування під мікроскопом</span>
+    <h1>Зберігаємо зуб там, де інші пропонують видалення</h1>
+    <p class="sub">Лікування кореневих каналів під мікроскопом — коли лікар бачить те, чого не видно неозброєним оком. Терапевтична стоматологія для дорослих.</p>
+    <div class="btns"><a class="btn btn-a" href="#zapys">Записатись на прийом</a><a class="btn btn-l" href="#ceny">Дивитись усі ціни</a></div>
   </div>
-</section>
-
-<section style="padding-top:0">
-  <div class="wrap">
-    <div class="grid3">
-      <div class="card"><div class="ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg></div><h3>Мікроскоп на кожному етапі</h3><p>Канали, тріщини й приховані відгалуження видно на збільшенні до 20 разів. Це різниця між «залікували» і «залікували правильно».</p></div>
-      <div class="card"><div class="ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5c2-1.5 4.5-2 6-.5 1.7 1.7 1 5-.5 8.5-.9 2.1-1 6.5-2.5 6.5s-1.3-4-3-4-1.5 4-3 4-1.6-4.4-2.5-6.5C5 8.5 4.3 5.2 6 3.5c1.5-1.5 4-1 6 2z"/></svg></div><h3>Спершу діагностика</h3><p>Знімок і план лікування до початку роботи. Ви бачите, що саме буде зроблено і скільки це коштуватиме.</p></div>
-      <div class="card"><div class="ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Один візит — один етап</h3><p>Прийом на годину, без поспіху й без «прийдіть ще пʼять разів». Кожен візит має зрозумілий результат.</p></div>
-    </div>
+  <div class="pcard">
+    <div class="ph">Ціни на головне</div>
+    <div class="pr"><span>Консультація та план лікування</span><b>500 ₴</b></div><div class="pr"><span>Лікування карієсу</span><b>від 1 800 ₴</b></div><div class="pr"><span>Лікування каналів під мікроскопом</span><b>від 4 500 ₴</b></div><div class="pr"><span>Перелікування каналів</span><b>від 5 500 ₴</b></div>
+    <div class="pf">Повний перелік — у таблиці нижче. Фінальна сума фіксується в плані лікування до початку роботи.</div>
   </div>
-</section>
+</div></section>
 
-<section id="services" style="background:var(--surface)">
-  <div class="wrap">
-    <div class="center"><span class="tag">Послуги</span><h2 style="margin-top:15px">Послуги та ціни</h2><p class="sub">Ціни вказані як орієнтир — фінальну суму ви бачите в плані лікування до початку роботи.</p></div>
-    <div class="price-list" style="background:#fff">
-      <div class="row"><div class="n">Консультація та план лікування<span>Огляд, знімок, письмовий план із цінами</span></div><div class="p">500 ₴</div></div>
-      <div class="row"><div class="n">Лікування карієсу<span>З анестезією, реставрація композитом</span></div><div class="p">від 1 800 ₴</div></div>
-      <div class="row"><div class="n">Лікування каналів під мікроскопом<span>Один канал, з тимчасовою пломбою</span></div><div class="p">від 4 500 ₴</div></div>
-      <div class="row"><div class="n">Перелікування каналів<span>Коли попереднє лікування не дало результату</span></div><div class="p">від 5 500 ₴</div></div>
-      <div class="row"><div class="n">Професійна гігієна<span>Ультразвук, Air Flow, поліровка</span></div><div class="p">1 600 ₴</div></div>
-      <div class="row"><div class="n">Художня реставрація зуба<span>Відновлення форми й кольору</span></div><div class="p">від 2 500 ₴</div></div>
-    </div>
-    <p class="sub" style="margin-top:24px;font-size:14.5px">Остаточна вартість визначається після огляду та плану лікування.</p>
+<section id="ceny"><div class="wrap">
+  <span class="lbl">Прайс</span>
+  <h2 style="margin-top:12px">Послуги та ціни</h2>
+  <div class="tbl">
+    <div class="tr"><div class="n">Консультація та план лікування<span>Огляд, знімок, письмовий план із цінами</span></div><div class="p">500 ₴</div></div>
+    <div class="tr"><div class="n">Лікування карієсу<span>З анестезією, реставрація композитом</span></div><div class="p">від 1 800 ₴</div></div>
+    <div class="tr"><div class="n">Лікування каналів під мікроскопом<span>Один канал, з тимчасовою пломбою</span></div><div class="p">від 4 500 ₴</div></div>
+    <div class="tr"><div class="n">Перелікування каналів<span>Коли попереднє лікування не дало результату</span></div><div class="p">від 5 500 ₴</div></div>
+    <div class="tr"><div class="n">Професійна гігієна<span>Ультразвук, Air Flow, поліровка</span></div><div class="p">1 600 ₴</div></div>
+    <div class="tr"><div class="n">Художня реставрація зуба<span>Відновлення форми й кольору</span></div><div class="p">від 2 500 ₴</div></div>
   </div>
-</section>
+  <p class="note">Ціни вказані як орієнтир — фінальну суму ви бачите в плані лікування до початку роботи. Остаточна вартість визначається після огляду.</p>
+</div></section>
 
-<section id="how">
-  <div class="wrap">
-    <div class="center"><span class="tag">Прийом</span><h2 style="margin-top:15px">Як проходить лікування</h2><p class="sub">Щоб ви знали, що буде відбуватись, ще до того як сядете в крісло.</p></div>
-    <div class="steps">
-      <div class="step"><div class="n">1</div><h3>Огляд і знімок</h3><p>Дивимось стан зубів, робимо знімок. Без знімка лікувати канали неможливо.</p></div>
-      <div class="step"><div class="n">2</div><h3>План і ціна</h3><p>Пояснюю, що і навіщо. Ви отримуєте план із цінами й вирішуєте самі.</p></div>
-      <div class="step"><div class="n">3</div><h3>Лікування</h3><p>З анестезією. Якщо відчуваєте дискомфорт — піднімаєте руку, зупиняємось.</p></div>
-      <div class="step"><div class="n">4</div><h3>Контроль</h3><p>Контрольний знімок і рекомендації. Наступний візит — тільки якщо потрібен.</p></div>
-    </div>
-  </div>
-</section>
+<section style="padding:0"><div class="wrap"><div class="usp">
+  <div><div class="num">01</div><h3>Мікроскоп на кожному етапі</h3><p>Канали, тріщини й приховані відгалуження видно на збільшенні до 20 разів. Це різниця між «залікували» і «залікували правильно».</p></div>
+  <div><div class="num">02</div><h3>Спершу діагностика</h3><p>Знімок і план лікування до початку роботи. Ви бачите, що саме буде зроблено і скільки це коштуватиме.</p></div>
+  <div><div class="num">03</div><h3>Один візит — один етап</h3><p>Прийом на годину, без поспіху й без «прийдіть ще пʼять разів». Кожен візит має зрозумілий результат.</p></div>
+</div></div></section>
 
-<section id="about" style="background:var(--surface)">
-  <div class="wrap about-g">
-    <div class="portrait" style="background:#fff"><span class="ph">[ФОТО]</span><span class="ph2">робочий момент<br>або кабінет</span></div>
-    <div>
-      <span class="tag">Про лікаря</span>
-      <h2 style="margin-top:15px">Юлія Савчук</h2>
-      <p>Стоматолог-терапевт, 8 років практики. Спеціалізуюсь на ендодонтії — лікуванні кореневих каналів, зокрема повторному, коли попереднє лікування не спрацювало.</p>
-      <p>Працюю з мікроскопом на всіх етапах. Це не маркетинг: канал шириною з волосину неможливо якісно обробити наосліп, і саме через це зуби з «пролікованими» каналами часто доводиться перелікувати за кілька років.</p>
-      <p>Веду прийом дорослих. Якщо після огляду стане зрозуміло, що зуб врятувати не вдасться, скажу про це прямо й поясню варіанти.</p>
-    </div>
-  </div>
-</section>
+<section id="how"><div class="wrap">
+  <span class="lbl">Прийом</span>
+  <h2 style="margin-top:12px">Як проходить лікування</h2>
+  <div class="tl"><div><div class="n">1</div><h3>Огляд і знімок</h3><p>Дивимось стан зубів, робимо знімок. Без знімка лікувати канали неможливо.</p></div>
+  <div><div class="n">2</div><h3>План і ціна</h3><p>Пояснюю, що і навіщо. Ви отримуєте план із цінами й вирішуєте самі.</p></div>
+  <div><div class="n">3</div><h3>Лікування</h3><p>З анестезією. Якщо відчуваєте дискомфорт — піднімаєте руку, зупиняємось.</p></div>
+  <div><div class="n">4</div><h3>Контроль</h3><p>Контрольний знімок і рекомендації. Наступний візит — тільки якщо потрібен.</p></div></div>
+</div></section>
 
-<section id="reviews">
-  <div class="wrap">
-    <div class="center"><span class="tag">Відгуки</span><h2 style="margin-top:15px">Що кажуть пацієнти</h2><p class="sub">Відгуки нижче — демонстраційні, як приклад оформлення блока.</p></div>
-    <div class="grid3">
-      <div class="rev"><div class="stars">★★★★★</div><p>Прийшла з зубом, який у двох клініках рекомендували видаляти. Юлія перелікувала канали, зуб стоїть третій рік. Знімки показувала на кожному етапі, все пояснювала.</p><div class="who">Демонстраційний відгук</div></div>
-      <div class="rev"><div class="stars">★★★★★</div><p>Найбільше сподобалось, що спершу дали письмовий план із цінами. Жодних доплат у процесі не зʼявилось — заплатила рівно стільки, скільки було в плані.</p><div class="who">Демонстраційний відгук</div></div>
-      <div class="rev"><div class="stars">★★★★★</div><p>Боюсь стоматологів з дитинства. Тут вперше не було паніки: попереджають про кожну дію, роблять паузи. Лікування каналу пройшло спокійно.</p><div class="who">Демонстраційний відгук</div></div>
-    </div>
-  </div>
-</section>
+<section id="about" style="background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap ab">
+  <div><span class="lbl">Про лікаря</span><h2 style="margin-top:12px">Юлія Савчук</h2><p>Стоматолог-терапевт, 8 років практики. Спеціалізуюсь на ендодонтії — лікуванні кореневих каналів, зокрема повторному, коли попереднє лікування не спрацювало.</p><p>Працюю з мікроскопом на всіх етапах. Це не маркетинг: канал шириною з волосину неможливо якісно обробити наосліп, і саме через це зуби з «пролікованими» каналами часто доводиться перелікувати за кілька років.</p><p>Веду прийом дорослих. Якщо після огляду стане зрозуміло, що зуб врятувати не вдасться, скажу про це прямо й поясню варіанти.</p></div>
+  <div class="ph-box" style="background:#fff"><b>[ФОТО ЛІКАРЯ]</b><span>портрет у кабінеті</span></div>
+</div></section>
 
-<section id="zapys" style="padding-top:0">
-  <div class="wrap">
-    <div class="band">
-      <h2>Записатись на консультацію</h2>
-      <p>Напишіть або зателефонуйте — підберемо зручний час. На консультації зробимо знімок і складемо план лікування з цінами.</p>
-      <div class="btns">
-        <a class="btn btn-w" href="#zapys">Зателефонувати</a>
-        <a class="btn btn-o" href="#zapys">Написати у Viber</a>
-        <a class="btn btn-o" href="#zapys">Написати в Telegram</a>
-      </div>
-    </div>
-  </div>
-</section>
+<section id="rev"><div class="wrap">
+  <span class="lbl">Відгуки</span><h2 style="margin-top:12px">Що кажуть пацієнти</h2>
+  <div class="revs"><div class="rev"><p>«Прийшла з зубом, який у двох клініках рекомендували видаляти. Юлія перелікувала канали, зуб стоїть третій рік. Знімки показувала на кожному етапі, все пояснювала.»</p><div class="w">Демонстраційний відгук</div></div>
+  <div class="rev"><p>«Найбільше сподобалось, що спершу дали письмовий план із цінами. Жодних доплат у процесі не зʼявилось — заплатила рівно стільки, скільки було в плані.»</p><div class="w">Демонстраційний відгук</div></div>
+  <div class="rev"><p>«Боюсь стоматологів з дитинства. Тут вперше не було паніки: попереджають про кожну дію, роблять паузи. Лікування каналу пройшло спокійно.»</p><div class="w">Демонстраційний відгук</div></div></div>
+</div></section>
 
+<section id="zapys" style="padding-top:0"><div class="wrap"><div class="cta">
+  <div><h2>Записатись на консультацію</h2><p>Напишіть або зателефонуйте — підберемо зручний час. На консультації зробимо знімок і складемо план лікування з цінами.</p></div>
+  <div class="btns"><a class="btn btn-w" href="#zapys">Зателефонувати</a><a class="btn btn-o" href="#zapys">Написати у Viber</a></div>
+</div></div></section>
 </main>
-
-<footer>
+<footer class="">
   <div class="wrap foot">
     <div>Юлія Савчук · стоматолог-терапевт · Рівне</div>
     <div>Демонстраційний сайт · <a href="https://sajty-likaryam.vercel.app">Хто його зробив</a></div>
   </div>
 </footer>
-
 </body>
 </html>
+
