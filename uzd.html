@@ -12,220 +12,154 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='10' fill='%233E6BB8'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap">
 <style>
-  :root{--ink:#101418;--muted:#5B6673;--line:#E4E7EB;--surface:#F7F9FB;
-    --a:#3E6BB8;--a-dark:#3E6BB8CC;--tint:#F1F5FC;--soft:#E4EBF8;--wrap:1120px;}
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
-  body{margin:0;background:#fff;color:var(--ink);font-family:'Manrope',system-ui,-apple-system,sans-serif;font-weight:500;line-height:1.55;-webkit-font-smoothing:antialiased;}
-  a{color:var(--a);}
-  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px;}
-  section{padding:clamp(52px,6.5vw,86px) 0;}
-  h1,h2,h3{margin:0;letter-spacing:-.03em;font-weight:800;line-height:1.09;}
-  h1{font-size:clamp(31px,5vw,50px);}
-  h2{font-size:clamp(25px,3.6vw,38px);}
-  h3{font-size:18px;letter-spacing:-.02em;line-height:1.3;}
-  p{margin:0;}
-  .sub{color:var(--muted);font-size:clamp(16px,1.9vw,18.5px);}
-  .center{text-align:center;}
-  .center .sub{max-width:60ch;margin:15px auto 0;}
-  .tag{display:inline-block;padding:7px 15px;border-radius:999px;background:var(--soft);color:var(--a);font-size:12.5px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;}
-  .demo-bar{background:#101418;color:#fff;font-size:13.5px;font-weight:600;padding:11px 20px;text-align:center;line-height:1.45;}
-  .demo-bar b{color:#FFC531;}
-  header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line);}
-  .nav{display:flex;align-items:center;gap:26px;height:64px;}
-  .logo{font-weight:800;font-size:18px;letter-spacing:-.03em;color:var(--ink);text-decoration:none;line-height:1.15;}
-  .logo span{display:block;font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.02em;}
-  .menu{display:flex;gap:22px;margin-left:auto;}
-  .menu a{color:var(--muted);text-decoration:none;font-size:14.5px;font-weight:600;}
-  .menu a:hover{color:var(--ink);}
-  .nav .btn{padding:10px 20px;min-height:0;font-size:14.5px;}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:14px 28px;border-radius:12px;font-weight:800;font-size:15.5px;text-decoration:none;transition:.15s;}
-  .btn-a{background:var(--a);color:#fff;box-shadow:0 8px 20px #3E6BB833;}
-  .btn-a:hover{filter:brightness(.92);color:#fff;}
-  .btn-line{border:2px solid var(--line);background:#fff;color:var(--ink);}
-  .btn-line:hover{border-color:var(--a);color:var(--a);}
-  .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;}
-  .hero{background:linear-gradient(180deg,var(--tint),#fff);padding-top:clamp(38px,4.5vw,60px);}
-  .hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:52px;align-items:center;}
-  .hero h1{margin:17px 0 17px;}
-  .hero .sub{max-width:44ch;}
-  .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;}
-  .fact{padding:9px 15px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:13.5px;font-weight:700;}
-  .art{position:relative;}
-  .portrait{aspect-ratio:4/5;border-radius:22px;background:var(--soft);border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;text-align:center;padding:26px;}
-  .portrait .ph{font-size:14.5px;font-weight:800;color:var(--a);letter-spacing:.4px;}
-  .portrait .ph2{font-size:13px;font-weight:600;color:var(--muted);}
-  .badge{position:absolute;background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 17px;box-shadow:0 12px 30px rgba(16,20,24,.13);font-size:13.5px;font-weight:800;}
-  .badge b{color:var(--a);display:block;font-size:19px;margin-bottom:2px;}
-  .b1{top:22px;left:-22px;}
-  .b2{bottom:26px;right:-18px;}
-  .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:42px;}
-  .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:42px;}
-  .card{padding:26px;border:1px solid var(--line);border-radius:16px;background:#fff;}
-  .card p{margin-top:9px;color:var(--muted);font-size:14.5px;line-height:1.55;}
-  .ico{width:44px;height:44px;border-radius:12px;background:var(--soft);color:var(--a);display:flex;align-items:center;justify-content:center;margin-bottom:15px;}
-  .price-list{margin-top:42px;border:1px solid var(--line);border-radius:18px;overflow:hidden;}
-  .row{display:flex;gap:20px;align-items:baseline;padding:20px 26px;border-bottom:1px solid var(--line);}
-  .row:last-child{border-bottom:none;}
-  .row .n{font-weight:700;font-size:16.5px;flex:1;}
-  .row .n span{display:block;color:var(--muted);font-size:14px;font-weight:500;margin-top:4px;line-height:1.5;}
-  .row .p{font-weight:800;font-size:17px;color:var(--a);white-space:nowrap;}
-  .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:42px;}
-  .step{padding:24px;border-radius:16px;background:#fff;border:1px solid var(--line);}
-  .step .n{width:36px;height:36px;border-radius:11px;background:var(--a);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
-  .step p{color:var(--muted);font-size:14px;margin-top:7px;line-height:1.5;}
-  .rev{padding:26px;border-radius:16px;background:#fff;border:1px solid var(--line);}
-  .rev p{font-size:15.5px;line-height:1.6;}
-  .rev .who{margin-top:16px;padding-top:15px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted);font-weight:600;}
-  .stars{color:var(--a);letter-spacing:2px;font-size:14px;margin-bottom:11px;}
-  .about-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:46px;align-items:center;}
-  .about-g p{color:var(--muted);font-size:16.5px;margin-top:14px;line-height:1.65;}
-  .band{background:var(--a);border-radius:24px;padding:clamp(34px,4.6vw,54px);color:#fff;text-align:center;}
-  .band h2{color:#fff;}
-  .band p{color:#ffffffcc;margin-top:14px;font-size:16.5px;max-width:52ch;margin-left:auto;margin-right:auto;}
-  .band .btns{justify-content:center;}
-  .band .btn-w{background:#fff;color:var(--a);}
-  .band .btn-o{border:2px solid #ffffff55;color:#fff;}
-  footer{border-top:1px solid var(--line);padding:38px 0 34px;color:var(--muted);font-size:14.5px;}
-  .foot{display:flex;flex-wrap:wrap;gap:14px 26px;justify-content:space-between;align-items:center;}
-  @media (max-width:900px){
-    .hero-grid,.about-g{grid-template-columns:1fr;gap:34px;}
-    .grid3,.steps{grid-template-columns:repeat(2,minmax(0,1fr));}
-    .menu{display:none;}
-    .b1,.b2{display:none;}
-    .portrait{max-width:340px;}
-  }
-  @media (max-width:600px){
-    .grid3,.grid2,.steps{grid-template-columns:1fr;}
-    .btn{width:100%;}
-    .btns{flex-direction:column;}
-    .row{flex-direction:column;gap:7px;}
-  }</style>
+:root{--ink:#16202B;--muted:#5A6875;--line:#E2E7EC;--bg:#F6F8FA;--a:#3E6BB8;--soft:#E4EBF8;}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-weight:400;line-height:1.75;font-size:18.5px;-webkit-font-smoothing:antialiased}
+a{color:var(--a)}
+.wrap{max-width:760px;margin:0 auto;padding:0 22px}
+.wide{max-width:900px}
+section{padding:clamp(46px,6vw,74px) 0}
+h1,h2,h3{margin:0;font-family:'Manrope',system-ui,sans-serif;font-weight:700;letter-spacing:-.028em;line-height:1.16}
+h1{font-size:clamp(30px,4.4vw,43px);line-height:1.14}
+h2{font-size:clamp(23px,3vw,30px)}
+h3{font-size:18px;letter-spacing:-.012em}
+p{margin:0}
+p+p{margin-top:18px}
+.demo-bar{background:#16202B;color:#fff;font-family:'Manrope',sans-serif;font-size:13px;font-weight:600;padding:10px 20px;text-align:center;line-height:1.45}
+.demo-bar b{color:#FFC531}
+.lbl{font-family:'Manrope',sans-serif;font-size:11.5px;font-weight:800;letter-spacing:2.4px;text-transform:uppercase;color:var(--a)}
+header{border-bottom:1px solid var(--line);background:#fff}
+.nav{display:flex;align-items:center;gap:22px;height:70px}
+.logo{font-family:'Manrope',sans-serif;font-weight:800;font-size:17px;letter-spacing:-.03em;color:var(--ink);text-decoration:none;line-height:1.15}
+.logo span{display:block;font-size:11.5px;font-weight:600;color:var(--muted);letter-spacing:0}
+.menu{display:flex;gap:22px;margin-left:auto;font-family:'Manrope',sans-serif}
+.menu a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600}
+.menu a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:14px 30px;border-radius:999px;font-family:'Manrope',sans-serif;font-weight:700;font-size:15.5px;text-decoration:none;transition:.15s;border:1.5px solid transparent}
+.nav .btn{min-height:42px;padding:10px 20px;font-size:14px}
+.btn-a{background:var(--a);color:#fff}
+.btn-a:hover{filter:brightness(.9);color:#fff}
+.btn-l{border-color:var(--line);color:var(--ink)}
+.btn-l:hover{border-color:var(--a);color:var(--a)}
+.hero{padding-top:clamp(48px,6vw,84px);padding-bottom:clamp(40px,5vw,64px)}
+.hero h1{margin:16px 0 22px}
+.hero .sub{color:var(--muted);font-size:20px;line-height:1.7}
+.hero .btn{margin-top:30px}
+.rule{border:none;border-top:1px solid var(--line);margin:0}
+.q{margin-top:34px}
+.q>div{padding:26px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:38px 1fr;gap:18px}
+.q .n{font-family:'Manrope',sans-serif;font-size:14px;font-weight:800;color:var(--a);padding-top:4px}
+.q p{color:var(--muted);font-size:17px;margin-top:8px;line-height:1.7}
+.dl{margin-top:32px}
+.dl>div{display:flex;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--line)}
+.dl .n{flex:1;font-family:'Manrope',sans-serif;font-size:17px;font-weight:700;letter-spacing:-.015em}
+.dl .n span{display:block;font-family:'Source Serif 4',serif;font-weight:400;color:var(--muted);font-size:16px;margin-top:5px;line-height:1.6}
+.dl .p{font-family:'Manrope',sans-serif;font-weight:800;font-size:17px;color:var(--a);white-space:nowrap}
+.take{margin-top:30px;background:var(--bg);border-left:3px solid var(--a);padding:26px 28px}
+.take h3{margin-bottom:12px}
+.take ul{margin:0;padding-left:20px;color:var(--muted);font-size:17px;line-height:1.75}
+.take li+li{margin-top:7px}
+.about p{color:var(--muted);margin-top:18px}
+.quote{border-top:1px solid var(--line);padding-top:28px;margin-top:28px}
+.quote:first-of-type{border-top:none;padding-top:0;margin-top:34px}
+.quote p{font-style:italic;font-size:19px;line-height:1.7}
+.quote .w{font-family:'Manrope',sans-serif;font-style:normal;font-size:12px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:var(--muted);margin-top:14px}
+.end{text-align:center;background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.end p{color:var(--muted);margin:16px auto 0;max-width:48ch;font-size:18px}
+.end .btns{display:flex;gap:12px;justify-content:center;margin-top:30px;flex-wrap:wrap}
+footer{padding:32px 0;color:var(--muted);font-family:'Manrope',sans-serif;font-size:14px}
+.foot{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between}
+@media(max-width:760px){.menu{display:none}}
+@media(max-width:620px){.btn{width:100%}.dl>div{flex-direction:column;gap:6px}.end .btns{flex-direction:column}}</style>
 </head>
 <body>
-
 <div class="demo-bar"><b>Демонстраційний сайт.</b> Лікаря з таким іменем не існує — сторінку зроблено як приклад роботи, контакти неактивні.</div>
-
-<header>
-  <div class="wrap nav">
-    <a class="logo" href="#top">Тетяна Ліщук<span>лікар ультразвукової діагностики · Рівне</span></a>
-    <nav class="menu">
-      <a href="#services">Послуги та ціни</a>
-      <a href="#how">Підготовка</a>
-      <a href="#about">Про лікаря</a>
-      <a href="#reviews">Відгуки</a>
-    </nav>
-    <a class="btn btn-a" href="#zapys">Записатись</a>
-  </div>
-</header>
+<header><div class="wrap wide nav">
+  <a class="logo" href="#top">Тетяна Ліщук<span>лікар ультразвукової діагностики · Рівне</span></a>
+  <nav class="menu"><a href="#how">Як проходить</a><a href="#ceny">Обстеження та ціни</a><a href="#about">Про лікаря</a></nav>
+  <a class="btn btn-a" href="#zapys">Записатись</a>
+</div></header>
 
 <main id="top">
+<section class="hero"><div class="wrap">
+  <span class="lbl">Жіноче здоровʼя та вагітність</span>
+  <h1>УЗД, після якого зрозуміло, що відбувається</h1>
+  <p class="sub">Скринінги вагітності, жіноче здоровʼя, 3D/4D з відеозаписом для батьків. Висновок на руки в день обстеження, з поясненням зрозумілою мовою.</p>
+  <div><a class="btn btn-a" href="#zapys">Записатись на обстеження</a></div>
+</div></section>
 
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="tag">Жіноче здоровʼя та вагітність</span>
-      <h1>УЗД, після якого зрозуміло, що відбувається</h1>
-      <p class="sub">Скринінги вагітності, жіноче здоровʼя, 3D/4D з відеозаписом для батьків. Висновок на руки в день обстеження, з поясненням зрозумілою мовою.</p>
-      <div class="facts"><span class="fact">14 років практики</span><span class="fact">3D/4D з відеозаписом</span><span class="fact">Висновок одразу</span></div>
-      <div class="btns">
-        <a class="btn btn-a" href="#zapys">Записатись на прийом</a>
-        <a class="btn btn-line" href="#services">Послуги та ціни</a>
-      </div>
-    </div>
-    <div class="art">
-      <div class="portrait"><span class="ph">[ФОТО ЛІКАРЯ]</span><span class="ph2">портрет у кабінеті<br>або на світлому фоні</span></div>
-      <div class="badge b1"><b>30 хв</b>обстеження</div>
-      <div class="badge b2"><b>3D/4D</b>запис відео на телефон</div>
-    </div>
+<hr class="rule">
+
+<section id="how"><div class="wrap">
+  <span class="lbl">Підготовка</span>
+  <h2 style="margin-top:12px">Як підготуватись до обстеження</h2>
+  <p style="color:var(--muted);margin-top:16px">Найчастіше питання перед УЗД — що робити напередодні. Відповідь залежить від виду обстеження.</p>
+  <div class="q"><div><div class="n">01</div><div><h3>Скринінг вагітності</h3><p>Спеціальної підготовки не потрібно. На ранніх термінах попросимо трохи наповнений сечовий міхур.</p></div></div>
+  <div><div class="n">02</div><div><h3>Малий таз</h3><p>Трансабдомінально — випити 700–1000 мл води за годину. Трансвагінально — навпаки, спорожнити міхур.</p></div></div>
+  <div><div class="n">03</div><div><h3>Молочні залози</h3><p>Найінформативніше на 5–12 день циклу. Підготовка не потрібна.</p></div></div>
+  <div><div class="n">04</div><div><h3>Скільки триває</h3><p>Обстеження — близько 30 хвилин. Протокол оформлюється одразу, чекати не потрібно.</p></div></div></div>
+  <div class="take">
+    <h3>Що взяти з собою</h3>
+    <ul>
+      <li>Попередні протоколи УЗД — динаміка інформативніша за одне обстеження</li>
+      <li>Обмінну карту, якщо вона вже заведена</li>
+      <li>Направлення від лікаря, якщо воно є</li>
+      <li>Телефон з вільним місцем — для відеозапису 3D/4D</li>
+    </ul>
   </div>
-</section>
+</div></section>
 
-<section style="padding-top:0">
-  <div class="wrap">
-    <div class="grid3">
-      <div class="card"><div class="ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3l2-6 3 13 3-10 2 5h5"/></svg></div><h3>Пояснюю, що на екрані</h3><p>Ви виходите не з папірцем, у якому нічого не зрозуміло, а з розумінням, що саме побачив лікар і що це означає.</p></div>
-      <div class="card"><div class="ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-9.3A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7 2.7C19 15.6 12 20 12 20z"/></svg></div><h3>3D/4D з відеозаписом</h3><p>Для скринінгів вагітності — запис відео, який можна забрати з собою й показати вдома.</p></div>
-      <div class="card"><div class="ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Висновок у день візиту</h3><p>Протокол оформлюється одразу. Не потрібно приходити ще раз за результатом.</p></div>
-    </div>
-  </div>
-</section>
+<hr class="rule">
 
-<section id="services" style="background:var(--surface)">
-  <div class="wrap">
-    <div class="center"><span class="tag">Послуги</span><h2 style="margin-top:15px">Види обстежень і ціни</h2><p class="sub">Якщо не впевнені, яке саме обстеження потрібне на вашому терміні — напишіть, підкажу.</p></div>
-    <div class="price-list" style="background:#fff">
-      <div class="row"><div class="n">УЗД при вагітності, I триместр<span>Скринінг 11–13 тижнів, з протоколом</span></div><div class="p">850 ₴</div></div>
-      <div class="row"><div class="n">УЗД при вагітності, II–III триместр<span>Оцінка розвитку, плацента, доплер</span></div><div class="p">900 ₴</div></div>
-      <div class="row"><div class="n">3D/4D з відеозаписом<span>Додатково до скринінгу, запис на ваш телефон</span></div><div class="p">+400 ₴</div></div>
-      <div class="row"><div class="n">УЗД органів малого таза<span>Трансвагінально або трансабдомінально</span></div><div class="p">700 ₴</div></div>
-      <div class="row"><div class="n">Фолікулометрія<span>Одне відвідування в межах циклу</span></div><div class="p">450 ₴</div></div>
-      <div class="row"><div class="n">УЗД молочних залоз<span>З регіонарними лімфовузлами</span></div><div class="p">650 ₴</div></div>
-    </div>
-    <p class="sub" style="margin-top:24px;font-size:14.5px">Остаточна вартість визначається після огляду та плану лікування.</p>
-  </div>
-</section>
+<section id="ceny"><div class="wrap">
+  <span class="lbl">Обстеження</span>
+  <h2 style="margin-top:12px">Види обстежень і ціни</h2>
+  <p style="color:var(--muted);margin-top:16px">Якщо не впевнені, яке саме обстеження потрібне на вашому терміні — напишіть, підкажу.</p>
+  <div class="dl"><div><div class="n">УЗД при вагітності, I триместр<span>Скринінг 11–13 тижнів, з протоколом</span></div><div class="p">850 ₴</div></div>
+  <div><div class="n">УЗД при вагітності, II–III триместр<span>Оцінка розвитку, плацента, доплер</span></div><div class="p">900 ₴</div></div>
+  <div><div class="n">3D/4D з відеозаписом<span>Додатково до скринінгу, запис на ваш телефон</span></div><div class="p">+400 ₴</div></div>
+  <div><div class="n">УЗД органів малого таза<span>Трансвагінально або трансабдомінально</span></div><div class="p">700 ₴</div></div>
+  <div><div class="n">Фолікулометрія<span>Одне відвідування в межах циклу</span></div><div class="p">450 ₴</div></div>
+  <div><div class="n">УЗД молочних залоз<span>З регіонарними лімфовузлами</span></div><div class="p">650 ₴</div></div></div>
+</div></section>
 
-<section id="how">
-  <div class="wrap">
-    <div class="center"><span class="tag">Підготовка</span><h2 style="margin-top:15px">Як підготуватись до обстеження</h2><p class="sub">Найчастіше питання перед УЗД — що робити напередодні. Відповідь залежить від виду обстеження.</p></div>
-    <div class="steps">
-      <div class="step"><div class="n">1</div><h3>Скринінг вагітності</h3><p>Спеціальної підготовки не потрібно. На ранніх термінах попросимо трохи наповнений сечовий міхур.</p></div>
-      <div class="step"><div class="n">2</div><h3>Малий таз</h3><p>Трансабдомінально — випити 700–1000 мл води за годину. Трансвагінально — навпаки, спорожнити міхур.</p></div>
-      <div class="step"><div class="n">3</div><h3>Молочні залози</h3><p>Найінформативніше на 5–12 день циклу. Підготовка не потрібна.</p></div>
-      <div class="step"><div class="n">4</div><h3>Що взяти</h3><p>Попередні протоколи УЗД та обмінну карту, якщо вона вже є. Динаміка важливіша за одне обстеження.</p></div>
-    </div>
-  </div>
-</section>
+<hr class="rule">
 
-<section id="about" style="background:var(--surface)">
-  <div class="wrap about-g">
-    <div class="portrait" style="background:#fff"><span class="ph">[ФОТО]</span><span class="ph2">робочий момент<br>або кабінет</span></div>
-    <div>
-      <span class="tag">Про лікаря</span>
-      <h2 style="margin-top:15px">Тетяна Ліщук</h2>
-      <p>Лікар ультразвукової діагностики, 14 років практики. Основний напрям — ведення вагітності та жіноче здоровʼя.</p>
-      <p>Вважаю, що обстеження без пояснення наполовину марне. Тому показую на екрані, про що йдеться, і пояснюю висновок словами, які можна переказати вдома чи своєму гінекологу.</p>
-      <p>УЗД не ставить діагноз саме по собі — воно дає картину. Якщо потрібні додаткові дослідження або консультація профільного лікаря, скажу про це одразу й поясню, наскільки це терміново.</p>
-    </div>
-  </div>
-</section>
+<section id="about" class="about"><div class="wrap">
+  <span class="lbl">Про лікаря</span>
+  <h2 style="margin-top:12px">Тетяна Ліщук</h2>
+  <p>Лікар ультразвукової діагностики, 14 років практики. Основний напрям — ведення вагітності та жіноче здоровʼя.</p>
+  <p>Вважаю, що обстеження без пояснення наполовину марне. Тому показую на екрані, про що йдеться, і пояснюю висновок словами, які можна переказати вдома чи своєму гінекологу.</p>
+  <p>УЗД не ставить діагноз саме по собі — воно дає картину. Якщо потрібні додаткові дослідження або консультація профільного лікаря, скажу про це одразу й поясню, наскільки це терміново.</p>
+</div></section>
 
-<section id="reviews">
-  <div class="wrap">
-    <div class="center"><span class="tag">Відгуки</span><h2 style="margin-top:15px">Що кажуть пацієнти</h2><p class="sub">Відгуки нижче — демонстраційні, як приклад оформлення блока.</p></div>
-    <div class="grid3">
-      <div class="rev"><div class="stars">★★★★★</div><p>Ходила на всі три скринінги. Щоразу спокійно пояснювали, що бачать, і жодного разу не залишили з тривогою й незрозумілим протоколом.</p><div class="who">Демонстраційний відгук</div></div>
-      <div class="rev"><div class="stars">★★★★★</div><p>Зробили 3D і скинули відео на телефон — показували потім усій родині. Для нас це виявилось найдорожчим у тому візиті.</p><div class="who">Демонстраційний відгук</div></div>
-      <div class="rev"><div class="stars">★★★★★</div><p>Прийшла з попередніми протоколами, порівняли в динаміці й пояснили, що змін немає. Гінеколог потім сказав, що опис дуже детальний.</p><div class="who">Демонстраційний відгук</div></div>
-    </div>
-  </div>
-</section>
+<hr class="rule">
 
-<section id="zapys" style="padding-top:0">
-  <div class="wrap">
-    <div class="band">
-      <h2>Записатись на обстеження</h2>
-      <p>Напишіть свій термін або яке обстеження потрібне — підкажу підготовку й підберемо зручний час.</p>
-      <div class="btns">
-        <a class="btn btn-w" href="#zapys">Зателефонувати</a>
-        <a class="btn btn-o" href="#zapys">Написати у Viber</a>
-        <a class="btn btn-o" href="#zapys">Написати в Telegram</a>
-      </div>
-    </div>
-  </div>
-</section>
+<section><div class="wrap">
+  <span class="lbl">Відгуки</span>
+  <h2 style="margin-top:12px">Що кажуть пацієнтки</h2>
+  <p style="color:var(--muted);margin-top:16px;font-size:16px">Відгуки нижче — демонстраційні, як приклад оформлення блока.</p>
+  <div class="quote"><p>«Ходила на всі три скринінги. Щоразу спокійно пояснювали, що бачать, і жодного разу не залишили з тривогою й незрозумілим протоколом.»</p><div class="w">Демонстраційний відгук</div></div>
+  <div class="quote"><p>«Зробили 3D і скинули відео на телефон — показували потім усій родині. Для нас це виявилось найдорожчим у тому візиті.»</p><div class="w">Демонстраційний відгук</div></div>
+  <div class="quote"><p>«Прийшла з попередніми протоколами, порівняли в динаміці й пояснили, що змін немає. Гінеколог потім сказав, що опис дуже детальний.»</p><div class="w">Демонстраційний відгук</div></div>
+</div></section>
 
+<section id="zapys" class="end"><div class="wrap">
+  <span class="lbl">Запис</span>
+  <h2 style="margin-top:12px">Записатись на обстеження</h2>
+  <p>Напишіть свій термін або яке обстеження потрібне — підкажу підготовку й підберемо зручний час.</p>
+  <div class="btns"><a class="btn btn-a" href="#zapys">Написати у Viber</a><a class="btn btn-l" href="#zapys">Зателефонувати</a></div>
+</div></section>
 </main>
-
-<footer>
+<footer class="">
   <div class="wrap foot">
     <div>Тетяна Ліщук · лікар ультразвукової діагностики · Рівне</div>
     <div>Демонстраційний сайт · <a href="https://sajty-likaryam.vercel.app">Хто його зробив</a></div>
   </div>
 </footer>
-
 </body>
 </html>
+
