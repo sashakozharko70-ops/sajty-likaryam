@@ -12,220 +12,162 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='10' fill='%235A5FA8'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <style>
-  :root{--ink:#101418;--muted:#5B6673;--line:#E4E7EB;--surface:#F7F9FB;
-    --a:#5A5FA8;--a-dark:#5A5FA8CC;--tint:#F3F3FB;--soft:#E7E8F6;--wrap:1120px;}
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
-  body{margin:0;background:#fff;color:var(--ink);font-family:'Manrope',system-ui,-apple-system,sans-serif;font-weight:500;line-height:1.55;-webkit-font-smoothing:antialiased;}
-  a{color:var(--a);}
-  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px;}
-  section{padding:clamp(52px,6.5vw,86px) 0;}
-  h1,h2,h3{margin:0;letter-spacing:-.03em;font-weight:800;line-height:1.09;}
-  h1{font-size:clamp(31px,5vw,50px);}
-  h2{font-size:clamp(25px,3.6vw,38px);}
-  h3{font-size:18px;letter-spacing:-.02em;line-height:1.3;}
-  p{margin:0;}
-  .sub{color:var(--muted);font-size:clamp(16px,1.9vw,18.5px);}
-  .center{text-align:center;}
-  .center .sub{max-width:60ch;margin:15px auto 0;}
-  .tag{display:inline-block;padding:7px 15px;border-radius:999px;background:var(--soft);color:var(--a);font-size:12.5px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;}
-  .demo-bar{background:#101418;color:#fff;font-size:13.5px;font-weight:600;padding:11px 20px;text-align:center;line-height:1.45;}
-  .demo-bar b{color:#FFC531;}
-  header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line);}
-  .nav{display:flex;align-items:center;gap:26px;height:64px;}
-  .logo{font-weight:800;font-size:18px;letter-spacing:-.03em;color:var(--ink);text-decoration:none;line-height:1.15;}
-  .logo span{display:block;font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.02em;}
-  .menu{display:flex;gap:22px;margin-left:auto;}
-  .menu a{color:var(--muted);text-decoration:none;font-size:14.5px;font-weight:600;}
-  .menu a:hover{color:var(--ink);}
-  .nav .btn{padding:10px 20px;min-height:0;font-size:14.5px;}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:14px 28px;border-radius:12px;font-weight:800;font-size:15.5px;text-decoration:none;transition:.15s;}
-  .btn-a{background:var(--a);color:#fff;box-shadow:0 8px 20px #5A5FA833;}
-  .btn-a:hover{filter:brightness(.92);color:#fff;}
-  .btn-line{border:2px solid var(--line);background:#fff;color:var(--ink);}
-  .btn-line:hover{border-color:var(--a);color:var(--a);}
-  .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;}
-  .hero{background:linear-gradient(180deg,var(--tint),#fff);padding-top:clamp(38px,4.5vw,60px);}
-  .hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:52px;align-items:center;}
-  .hero h1{margin:17px 0 17px;}
-  .hero .sub{max-width:44ch;}
-  .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;}
-  .fact{padding:9px 15px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:13.5px;font-weight:700;}
-  .art{position:relative;}
-  .portrait{aspect-ratio:4/5;border-radius:22px;background:var(--soft);border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;text-align:center;padding:26px;}
-  .portrait .ph{font-size:14.5px;font-weight:800;color:var(--a);letter-spacing:.4px;}
-  .portrait .ph2{font-size:13px;font-weight:600;color:var(--muted);}
-  .badge{position:absolute;background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 17px;box-shadow:0 12px 30px rgba(16,20,24,.13);font-size:13.5px;font-weight:800;}
-  .badge b{color:var(--a);display:block;font-size:19px;margin-bottom:2px;}
-  .b1{top:22px;left:-22px;}
-  .b2{bottom:26px;right:-18px;}
-  .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:42px;}
-  .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:42px;}
-  .card{padding:26px;border:1px solid var(--line);border-radius:16px;background:#fff;}
-  .card p{margin-top:9px;color:var(--muted);font-size:14.5px;line-height:1.55;}
-  .ico{width:44px;height:44px;border-radius:12px;background:var(--soft);color:var(--a);display:flex;align-items:center;justify-content:center;margin-bottom:15px;}
-  .price-list{margin-top:42px;border:1px solid var(--line);border-radius:18px;overflow:hidden;}
-  .row{display:flex;gap:20px;align-items:baseline;padding:20px 26px;border-bottom:1px solid var(--line);}
-  .row:last-child{border-bottom:none;}
-  .row .n{font-weight:700;font-size:16.5px;flex:1;}
-  .row .n span{display:block;color:var(--muted);font-size:14px;font-weight:500;margin-top:4px;line-height:1.5;}
-  .row .p{font-weight:800;font-size:17px;color:var(--a);white-space:nowrap;}
-  .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:42px;}
-  .step{padding:24px;border-radius:16px;background:#fff;border:1px solid var(--line);}
-  .step .n{width:36px;height:36px;border-radius:11px;background:var(--a);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
-  .step p{color:var(--muted);font-size:14px;margin-top:7px;line-height:1.5;}
-  .rev{padding:26px;border-radius:16px;background:#fff;border:1px solid var(--line);}
-  .rev p{font-size:15.5px;line-height:1.6;}
-  .rev .who{margin-top:16px;padding-top:15px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted);font-weight:600;}
-  .stars{color:var(--a);letter-spacing:2px;font-size:14px;margin-bottom:11px;}
-  .about-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:46px;align-items:center;}
-  .about-g p{color:var(--muted);font-size:16.5px;margin-top:14px;line-height:1.65;}
-  .band{background:var(--a);border-radius:24px;padding:clamp(34px,4.6vw,54px);color:#fff;text-align:center;}
-  .band h2{color:#fff;}
-  .band p{color:#ffffffcc;margin-top:14px;font-size:16.5px;max-width:52ch;margin-left:auto;margin-right:auto;}
-  .band .btns{justify-content:center;}
-  .band .btn-w{background:#fff;color:var(--a);}
-  .band .btn-o{border:2px solid #ffffff55;color:#fff;}
-  footer{border-top:1px solid var(--line);padding:38px 0 34px;color:var(--muted);font-size:14.5px;}
-  .foot{display:flex;flex-wrap:wrap;gap:14px 26px;justify-content:space-between;align-items:center;}
-  @media (max-width:900px){
-    .hero-grid,.about-g{grid-template-columns:1fr;gap:34px;}
-    .grid3,.steps{grid-template-columns:repeat(2,minmax(0,1fr));}
-    .menu{display:none;}
-    .b1,.b2{display:none;}
-    .portrait{max-width:340px;}
-  }
-  @media (max-width:600px){
-    .grid3,.grid2,.steps{grid-template-columns:1fr;}
-    .btn{width:100%;}
-    .btns{flex-direction:column;}
-    .row{flex-direction:column;gap:7px;}
-  }</style>
+:root{--ink:#141619;--muted:#5C626B;--line:#D9DCE0;--bg:#F5F6F7;--a:#5A5FA8;}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--ink);font-family:'IBM Plex Sans',system-ui,sans-serif;font-weight:400;line-height:1.6;font-size:16.5px;-webkit-font-smoothing:antialiased}
+a{color:var(--a)}
+.wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+section{padding:clamp(42px,5vw,64px) 0}
+h1,h2,h3{margin:0;font-weight:600;letter-spacing:-.022em;line-height:1.14}
+h1{font-size:clamp(29px,4.2vw,42px)}
+h2{font-size:clamp(21px,2.7vw,27px)}
+h3{font-size:16.5px;font-weight:600;letter-spacing:0}
+p{margin:0}
+.mono{font-family:'IBM Plex Mono',ui-monospace,monospace}
+.demo-bar{background:#141619;color:#fff;font-size:12.5px;font-weight:500;padding:10px 20px;text-align:center;line-height:1.45}
+.demo-bar b{color:#FFC531}
+.lbl{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:500;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted)}
+.lbl b{color:var(--a);font-weight:600}
+header{border-bottom:2px solid var(--ink);background:#fff;position:sticky;top:0;z-index:30}
+.nav{display:flex;align-items:center;gap:22px;height:66px}
+.logo{font-weight:600;font-size:17px;letter-spacing:-.02em;color:var(--ink);text-decoration:none;line-height:1.2}
+.logo span{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:400;color:var(--muted);letter-spacing:.6px;margin-top:2px}
+.menu{display:flex;gap:20px;margin-left:auto}
+.menu a{color:var(--muted);text-decoration:none;font-size:14px}
+.menu a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:13px 26px;border-radius:2px;font-weight:600;font-size:15px;text-decoration:none;transition:.15s;border:1.5px solid var(--ink)}
+.nav .btn{min-height:40px;padding:9px 18px;font-size:14px}
+.btn-a{background:var(--ink);color:#fff}
+.btn-a:hover{background:var(--a);border-color:var(--a);color:#fff}
+.btn-l{background:#fff;color:var(--ink)}
+.btn-l:hover{background:var(--bg)}
+.hero{padding:clamp(40px,5vw,62px) 0 0}
+.hero h1{margin:14px 0 18px;max-width:20ch}
+.hero .sub{color:var(--muted);font-size:17.5px;max-width:62ch}
+.hero .btns{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.symp{margin-top:44px;border-top:2px solid var(--ink)}
+.symp .h{display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line)}
+.sg{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+.sg>div{display:grid;grid-template-columns:34px 1fr;gap:14px;padding:18px 0;border-bottom:1px solid var(--line)}
+.sg .n{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--a);padding-top:2px}
+.sg p{color:var(--muted);font-size:15px;margin-top:5px;line-height:1.55}
+.warn{margin-top:34px;border:1.5px solid var(--a);border-left-width:5px;padding:22px 24px;background:#fff}
+.warn h3{margin-bottom:10px}
+.warn ul{margin:0;padding-left:19px;color:var(--muted);font-size:15.5px}
+.warn li+li{margin-top:6px}
+.tbl{margin-top:30px;border-top:2px solid var(--ink)}
+.tbl .th{display:flex;gap:20px;padding:12px 0;border-bottom:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted)}
+.tbl .th .a{flex:1}
+.tr{display:flex;gap:20px;align-items:baseline;padding:17px 0;border-bottom:1px solid var(--line)}
+.tr .n{flex:1;font-weight:600;font-size:16.5px}
+.tr .n span{display:block;color:var(--muted);font-size:14.5px;font-weight:400;margin-top:4px;line-height:1.5}
+.tr .p{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:16px;color:var(--ink);white-space:nowrap}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:34px;border-top:1px solid var(--line)}
+.cols>div{padding:22px 26px 24px 0;border-right:1px solid var(--line);padding-right:26px}
+.cols>div:last-child{border-right:none}
+.cols>div:not(:first-child){padding-left:26px}
+.cols .n{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--a);letter-spacing:1.4px;margin-bottom:10px}
+.cols p{color:var(--muted);font-size:15px;margin-top:8px;line-height:1.55}
+.ab{display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:start}
+.ab .meta{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted);line-height:1.9}
+.ab .meta b{display:block;color:var(--ink);font-weight:600;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:8px}
+.ab p{color:var(--muted);margin-top:14px;font-size:16.5px;line-height:1.7}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:30px}
+.rev{border:1px solid var(--line);padding:22px;border-radius:2px}
+.rev p{font-size:15px;line-height:1.6}
+.rev .w{margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.3px;text-transform:uppercase;color:var(--muted)}
+.end{border:2px solid var(--ink);padding:clamp(30px,4vw,44px);display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:center}
+.end p{color:var(--muted);margin-top:12px}
+.end .btns{display:flex;flex-direction:column;gap:10px}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:12.5px}
+.foot{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between}
+@media(max-width:900px){.sg,.cols,.revs,.ab,.end{grid-template-columns:1fr}.menu{display:none}.cols>div{border-right:none;border-bottom:1px solid var(--line);padding-left:0!important;padding-right:0}.ab{gap:26px}}
+@media(max-width:620px){.btn{width:100%}.tr{flex-direction:column;gap:6px}.tbl .th{display:none}}</style>
 </head>
 <body>
-
 <div class="demo-bar"><b>Демонстраційний сайт.</b> Лікаря з таким іменем не існує — сторінку зроблено як приклад роботи, контакти неактивні.</div>
-
-<header>
-  <div class="wrap nav">
-    <a class="logo" href="#top">Анастасія Кожарко<span>лікар-невролог · Рівне</span></a>
-    <nav class="menu">
-      <a href="#services">Послуги та ціни</a>
-      <a href="#how">Симптоми</a>
-      <a href="#about">Про лікаря</a>
-      <a href="#reviews">Відгуки</a>
-    </nav>
-    <a class="btn btn-a" href="#zapys">Записатись</a>
-  </div>
-</header>
+<header><div class="wrap nav">
+  <a class="logo" href="#top">Анастасія Кожарко<span>лікар-невролог · Рівне</span></a>
+  <nav class="menu"><a href="#symp">Симптоми</a><a href="#ceny">Прийом і ціни</a><a href="#about">Про лікаря</a><a href="#rev">Відгуки</a></nav>
+  <a class="btn btn-a" href="#zapys">Записатись</a>
+</div></header>
 
 <main id="top">
+<section class="hero"><div class="wrap">
+  <span class="lbl"><b>Неврологія</b> · прийом дорослих</span>
+  <h1>Головний біль — не те, що треба терпіти роками</h1>
+  <p class="sub">Консультації дорослих: головний біль і мігрень, біль у спині та шиї, запаморочення, порушення сну. З розбором причини, а не лише знеболенням.</p>
+  <div class="btns"><a class="btn btn-a" href="#zapys">Записатись на консультацію</a><a class="btn btn-l" href="#ceny">Прийом і ціни</a></div>
 
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="tag">Неврологія</span>
-      <h1>Головний біль — не те, що треба терпіти роками</h1>
-      <p class="sub">Консультації дорослих: головний біль і мігрень, біль у спині та шиї, запаморочення, порушення сну. З розбором причини, а не лише знеболенням.</p>
-      <div class="facts"><span class="fact">11 років практики</span><span class="fact">Прийом 40 хвилин</span><span class="fact">План лікування на руки</span></div>
-      <div class="btns">
-        <a class="btn btn-a" href="#zapys">Записатись на прийом</a>
-        <a class="btn btn-line" href="#services">Послуги та ціни</a>
-      </div>
-    </div>
-    <div class="art">
-      <div class="portrait"><span class="ph">[ФОТО ЛІКАРЯ]</span><span class="ph2">портрет у кабінеті<br>або на світлому фоні</span></div>
-      <div class="badge b1"><b>40 хв</b>консультація</div>
-      <div class="badge b2"><b>Щоденник</b>відстеження нападів</div>
-    </div>
+  <div class="symp" id="symp">
+    <div class="h"><span class="lbl">З чим звертаються на прийом</span><span class="lbl">4 основні групи</span></div>
+    <div class="sg"><div><div class="n">01</div><div><h3>Головний біль</h3><p>Частіше двох разів на місяць або такий, що змушує відкладати справи.</p></div></div>
+    <div><div class="n">02</div><div><h3>Біль у спині та шиї</h3><p>Особливо якщо віддає в руку чи ногу або супроводжується онімінням.</p></div></div>
+    <div><div class="n">03</div><div><h3>Запаморочення</h3><p>Регулярне, при зміні положення тіла або з нудотою.</p></div></div>
+    <div><div class="n">04</div><div><h3>Порушення сну</h3><p>Важко заснути, часті пробудження, немає відчуття відпочинку зранку.</p></div></div></div>
   </div>
-</section>
 
-<section style="padding-top:0">
-  <div class="wrap">
-    <div class="grid3">
-      <div class="card"><div class="ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4a3 3 0 0 0-3 3 3 3 0 0 0-1 5.8V16a3 3 0 0 0 4 2.8 3 3 0 0 0 6 0A3 3 0 0 0 19 16v-3.2A3 3 0 0 0 18 7a3 3 0 0 0-3-3 3 3 0 0 0-3 1.5A3 3 0 0 0 9 4z"/><path d="M12 5.5v13"/></svg></div><h3>Шукаю причину</h3><p>Знеболювальне прибирає симптом на кілька годин. Розбір тригерів прибирає напади на місяці.</p></div>
-      <div class="card"><div class="ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Прийом на 40 хвилин</h3><p>Неврологічний огляд і докладний збір анамнезу не вміщаються у 15 хвилин.</p></div>
-      <div class="card"><div class="ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></svg></div><h3>Письмовий план</h3><p>Ви йдете з планом дій, а не з памʼяттю про те, що сказав лікар.</p></div>
-    </div>
+  <div class="warn">
+    <h3>Коли звертатись невідкладно</h3>
+    <ul>
+      <li>Раптовий інтенсивний головний біль, якого раніше не було</li>
+      <li>Слабкість або оніміння в руці чи нозі з одного боку</li>
+      <li>Порушення мови, зору або координації</li>
+      <li>Головний біль після травми голови</li>
+    </ul>
+    <p style="margin-top:14px;font-size:14.5px;color:var(--muted)">У цих випадках потрібна невідкладна допомога, а не плановий запис.</p>
   </div>
-</section>
+</div></section>
 
-<section id="services" style="background:var(--surface)">
-  <div class="wrap">
-    <div class="center"><span class="tag">Послуги</span><h2 style="margin-top:15px">Послуги та ціни</h2><p class="sub">Первинна консультація включає огляд, збір анамнезу та письмовий план.</p></div>
-    <div class="price-list" style="background:#fff">
-      <div class="row"><div class="n">Первинна консультація<span>Огляд, анамнез, план обстеження й лікування</span></div><div class="p">900 ₴</div></div>
-      <div class="row"><div class="n">Повторна консультація<span>Оцінка результату, корекція призначень</span></div><div class="p">600 ₴</div></div>
-      <div class="row"><div class="n">Ведення мігрені<span>Підбір профілактичної терапії, 3 місяці спостереження</span></div><div class="p">від 2 500 ₴</div></div>
-      <div class="row"><div class="n">Консультація при болю в спині<span>З оглядом і розбором результатів МРТ, якщо є</span></div><div class="p">900 ₴</div></div>
-      <div class="row"><div class="n">Консультація при порушеннях сну<span>Розбір гігієни сну та причин безсоння</span></div><div class="p">900 ₴</div></div>
-      <div class="row"><div class="n">Онлайн-консультація<span>Для повторних візитів і корекції лікування</span></div><div class="p">700 ₴</div></div>
-    </div>
-    <p class="sub" style="margin-top:24px;font-size:14.5px">Остаточна вартість визначається після огляду та плану лікування.</p>
+<section id="ceny" style="background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
+  <span class="lbl">Прийом</span>
+  <h2 style="margin-top:12px">Консультації та ціни</h2>
+  <p style="color:var(--muted);margin-top:12px;max-width:60ch">Первинна консультація включає неврологічний огляд, збір анамнезу та письмовий план обстеження й лікування.</p>
+  <div class="tbl">
+    <div class="th"><div class="a">Послуга</div><div>Вартість</div></div>
+    <div class="tr"><div class="n">Первинна консультація<span>Огляд, анамнез, план обстеження й лікування</span></div><div class="p">900 ₴</div></div>
+    <div class="tr"><div class="n">Повторна консультація<span>Оцінка результату, корекція призначень</span></div><div class="p">600 ₴</div></div>
+    <div class="tr"><div class="n">Ведення мігрені<span>Підбір профілактичної терапії, 3 місяці спостереження</span></div><div class="p">від 2 500 ₴</div></div>
+    <div class="tr"><div class="n">Консультація при болю в спині<span>З оглядом і розбором результатів МРТ, якщо є</span></div><div class="p">900 ₴</div></div>
+    <div class="tr"><div class="n">Консультація при порушеннях сну<span>Розбір гігієни сну та причин безсоння</span></div><div class="p">900 ₴</div></div>
+    <div class="tr"><div class="n">Онлайн-консультація<span>Для повторних візитів і корекції лікування</span></div><div class="p">700 ₴</div></div>
   </div>
-</section>
+</div></section>
 
-<section id="how">
-  <div class="wrap">
-    <div class="center"><span class="tag">Симптоми</span><h2 style="margin-top:15px">З чим варто звернутись</h2><p class="sub">Найчастіші причини, з якими приходять на прийом.</p></div>
-    <div class="steps">
-      <div class="step"><div class="n">1</div><h3>Головний біль</h3><p>Частіше двох разів на місяць або такий, що змушує відкладати справи.</p></div>
-      <div class="step"><div class="n">2</div><h3>Біль у спині та шиї</h3><p>Особливо якщо віддає в руку чи ногу або супроводжується онімінням.</p></div>
-      <div class="step"><div class="n">3</div><h3>Запаморочення</h3><p>Регулярне, при зміні положення тіла або з нудотою.</p></div>
-      <div class="step"><div class="n">4</div><h3>Порушення сну</h3><p>Важко заснути, часті пробудження, немає відчуття відпочинку зранку.</p></div>
-    </div>
-  </div>
-</section>
+<section><div class="wrap">
+  <span class="lbl">Підхід</span>
+  <h2 style="margin-top:12px">Як побудований прийом</h2>
+  <div class="cols"><div><div class="n">01</div><h3>Шукаю причину</h3><p>Знеболювальне прибирає симптом на кілька годин. Розбір тригерів прибирає напади на місяці.</p></div>
+  <div><div class="n">02</div><h3>Прийом на 40 хвилин</h3><p>Неврологічний огляд і докладний збір анамнезу не вміщаються у 15 хвилин.</p></div>
+  <div><div class="n">03</div><h3>Письмовий план</h3><p>Ви йдете з планом дій, а не з памʼяттю про те, що сказав лікар.</p></div></div>
+</div></section>
 
-<section id="about" style="background:var(--surface)">
-  <div class="wrap about-g">
-    <div class="portrait" style="background:#fff"><span class="ph">[ФОТО]</span><span class="ph2">робочий момент<br>або кабінет</span></div>
-    <div>
-      <span class="tag">Про лікаря</span>
-      <h2 style="margin-top:15px">Анастасія Кожарко</h2>
-      <p>Лікар-невролог, 11 років практики. Веду дорослих пацієнтів з головним болем, болем у спині, запамороченнями й порушеннями сну.</p>
-      <p>Найчастіша історія на прийомі — людина роками пʼє знеболювальне й вважає, що так і має бути. Часто виявляється, що напади мають зрозумілі тригери, і після їх розбору кількість болючих днів зменшується в рази.</p>
-      <p>На першому прийомі прошу принести щоденник болю за два тижні, якщо є можливість його вести. Це найкорисніший документ, який пацієнт може принести неврологу.</p>
-    </div>
-  </div>
-</section>
+<section id="about" style="border-top:1px solid var(--line)"><div class="wrap ab">
+  <div class="meta"><b>Дані лікаря</b>Спеціальність — лікар-невролог<br>Практика — 11 років<br>Прийом — дорослі<br>Місто — Рівне<br>Тривалість — 40 хвилин</div>
+  <div><span class="lbl">Про лікаря</span><h2 style="margin-top:12px">Анастасія Кожарко</h2><p>Лікар-невролог, 11 років практики. Веду дорослих пацієнтів з головним болем, болем у спині, запамороченнями й порушеннями сну.</p><p>Найчастіша історія на прийомі — людина роками пʼє знеболювальне й вважає, що так і має бути. Часто виявляється, що напади мають зрозумілі тригери, і після їх розбору кількість болючих днів зменшується в рази.</p><p>На першому прийомі прошу принести щоденник болю за два тижні, якщо є можливість його вести. Це найкорисніший документ, який пацієнт може принести неврологу.</p></div>
+</div></section>
 
-<section id="reviews">
-  <div class="wrap">
-    <div class="center"><span class="tag">Відгуки</span><h2 style="margin-top:15px">Що кажуть пацієнти</h2><p class="sub">Відгуки нижче — демонстраційні, як приклад оформлення блока.</p></div>
-    <div class="grid3">
-      <div class="rev"><div class="stars">★★★★★</div><p>Десять років жила з мігренню на знеболювальних. Тут вперше розібрали тригери й підібрали профілактику — нападів стало втричі менше.</p><div class="who">Демонстраційний відгук</div></div>
-      <div class="rev"><div class="stars">★★★★★</div><p>Прийом справді сорок хвилин, без відчуття, що тебе виштовхують. Пішов з планом на папері, а не з набором незрозумілих призначень.</p><div class="who">Демонстраційний відгук</div></div>
-      <div class="rev"><div class="stars">★★★★★</div><p>Пояснила, які обстеження потрібні, а які мені робити не варто й навіщо їх зазвичай призначають. Заощадила мені кілька тисяч.</p><div class="who">Демонстраційний відгук</div></div>
-    </div>
-  </div>
-</section>
+<section id="rev" style="background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
+  <span class="lbl">Відгуки</span>
+  <h2 style="margin-top:12px">Що кажуть пацієнти</h2>
+  <div class="revs"><div class="rev" style="background:#fff"><p>«Десять років жила з мігренню на знеболювальних. Тут вперше розібрали тригери й підібрали профілактику — нападів стало втричі менше.»</p><div class="w">Демонстраційний відгук</div></div>
+  <div class="rev" style="background:#fff"><p>«Прийом справді сорок хвилин, без відчуття, що тебе виштовхують. Пішов з планом на папері, а не з набором незрозумілих призначень.»</p><div class="w">Демонстраційний відгук</div></div>
+  <div class="rev" style="background:#fff"><p>«Пояснила, які обстеження потрібні, а які мені робити не варто й навіщо їх зазвичай призначають. Заощадила мені кілька тисяч.»</p><div class="w">Демонстраційний відгук</div></div></div>
+</div></section>
 
-<section id="zapys" style="padding-top:0">
-  <div class="wrap">
-    <div class="band">
-      <h2>Записатись на консультацію</h2>
-      <p>Опишіть коротко, що турбує — підберемо час. Якщо потрібні обстеження до візиту, скажу заздалегідь.</p>
-      <div class="btns">
-        <a class="btn btn-w" href="#zapys">Зателефонувати</a>
-        <a class="btn btn-o" href="#zapys">Написати у Viber</a>
-        <a class="btn btn-o" href="#zapys">Написати в Telegram</a>
-      </div>
-    </div>
-  </div>
-</section>
-
+<section id="zapys"><div class="wrap"><div class="end">
+  <div><h2>Записатись на консультацію</h2><p>Опишіть коротко, що турбує — підберемо час. Якщо потрібні обстеження до візиту, скажу заздалегідь.</p></div>
+  <div class="btns"><a class="btn btn-a" href="#zapys">Зателефонувати</a><a class="btn btn-l" href="#zapys">Написати в Telegram</a></div>
+</div></div></section>
 </main>
-
-<footer>
+<footer class="">
   <div class="wrap foot">
     <div>Анастасія Кожарко · лікар-невролог · Рівне</div>
     <div>Демонстраційний сайт · <a href="https://sajty-likaryam.vercel.app">Хто його зробив</a></div>
   </div>
 </footer>
-
 </body>
 </html>
