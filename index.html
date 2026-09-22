@@ -99,13 +99,12 @@
 
   .work { display: block; text-decoration: none; color: inherit; }
   .work .shot {
+    display: block;
     border-radius: var(--radius-md);
     overflow: hidden;
-    border: 1px solid var(--hairline);
-    background: var(--surface-raised);
-    transition: transform .2s ease, border-color .2s ease;
+    transition: transform .2s ease, box-shadow .2s ease;
   }
-  .work:hover .shot { transform: translateY(-4px); border-color: var(--brand); }
+  .work:hover .shot { transform: translateY(-4px); box-shadow: var(--shadow-card); }
   .work .tag { margin-top: var(--space-4); font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brand); }
   .work h3 { margin-top: var(--space-2); font-family: var(--font-display); font-size: 24px; line-height: 31px; font-weight: 600; }
   .work p { margin-top: var(--space-2); color: var(--ink-muted); max-width: 46ch; }
@@ -174,7 +173,7 @@
     <div class="wrap">
       <a class="logo" href="#top">
         Сайти лікарям
-        <small>Олександр Кожарко · Луцьк</small>
+        <small>Олександр Кожарко</small>
       </a>
       <nav>
         <a href="#roboty">Роботи</a>
@@ -268,8 +267,8 @@
       </div>
 
       <p class="works-note">
-        Це демонстраційні сайти для вигаданих лікарів. Ціни наближені до реальних
-        луцьких. Відкривайте з телефона — більшість пацієнтів дивиться саме так.
+        Це демонстраційні сайти для вигаданих лікарів, із реальними ринковими цінами.
+        Відкривайте з телефона — більшість пацієнтів дивиться саме так.
       </p>
     </div>
   </section>
@@ -306,8 +305,9 @@
       </div>
 
       <p class="works-note">
-        Чого сайт не зробить: не виведе вас у топ за запитом «стоматолог Луцьк» —
-        там клініки з великими сайтами. Він працює на пошук за вашим іменем.
+        Чого сайт не зробить: не виведе вас у топ за загальним запитом на кшталт
+        «стоматолог у місті» — там клініки з великими сайтами. Він працює на пошук
+        за вашим іменем.
       </p>
     </div>
   </section>
@@ -328,10 +328,10 @@
         </ul>
 
         <div class="side">
-          <h3>Скільки це коштує деінде</h3>
-          <p>Агенція за сайт-візитку лікаря просить від 800 $ і 3–6 тижнів. Конструктор дешевший, але збирати його доведеться вам самим.</p>
-          <p>Я між цими варіантами: під ключ, як в агенції, але за 200 $ і за три дні.</p>
-          <p class="muted" style="font-size:15px; line-height:25px">Домен і пошта оплачуються окремо й оформлюються на вас. Передоплата 50% до старту, решта — до передачі доступів.</p>
+          <h3>Умови</h3>
+          <p>Ціна названа до старту й не змінюється в процесі. Без «це виявилось складніше» на етапі здачі.</p>
+          <p>Передоплата 50% до старту, решта — до передачі доступів.</p>
+          <p class="muted" style="font-size:15px; line-height:25px">Домен і робоча пошта оплачуються окремо, за тарифами реєстратора, і оформлюються на вас.</p>
         </div>
       </div>
     </div>
@@ -407,8 +407,8 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <p>Олександр Кожарко · сайти приватним лікарям · Луцьк</p>
-    <p>Дизайн-система «Клінічна ясність»</p>
+    <p>Олександр Кожарко · сайти приватним лікарям</p>
+    <p><a href="https://t.me/Olexandr_Kozharko" target="_blank" rel="noopener">Telegram</a> · <a href="https://www.instagram.com/sajty.likaryam/" target="_blank" rel="noopener">Instagram</a></p>
   </div>
 </footer>
 
