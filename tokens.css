@@ -1,0 +1,161 @@
+/* ============================================================
+   Клінічна ясність — дизайн-токени
+   Дизайн-система лендінгів для приватних лікарів.
+   Джерело правди для кольорів, шрифтів і відступів усіх сайтів.
+
+   Підключення шрифтів у <head> сторінки, ДО цього файлу:
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="stylesheet"
+     href="https://fonts.googleapis.com/css2?family=Literata:wght@400..700&family=Commissioner:wght@400..700&display=swap">
+
+   Literata + Commissioner — ліцензія OFL, безкоштовні зокрема
+   для комерційного використання, повна українська кирилиця.
+   ============================================================ */
+
+:root,
+[data-theme="light"] {
+  /* Колір */
+  --surface: #f4f6f5;          /* фон сторінки */
+  --surface-raised: #ffffff;   /* картки, форми */
+  --ink: #101a1f;              /* основний текст */
+  --ink-muted: #4a5a60;        /* підписи, уточнення */
+  --hairline: #dde3e1;         /* лінії, рамки */
+  --brand: #0b5d54;            /* акцент: кнопки, посилання */
+  --brand-strong: #08463f;     /* наведення, натискання */
+  --brand-tint: #ddece8;       /* підкладки, теги */
+  --brass: #a8801f;            /* другий акцент, максимум 2 рази на сторінку */
+  --alert: #9c3a2b;            /* помилка у формі */
+
+  /* Тінь */
+  --shadow-card: 0 1px 2px rgba(16, 26, 31, 0.05), 0 10px 28px rgba(16, 26, 31, 0.07);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --surface: #101614;
+    --surface-raised: #17201e;
+    --ink: #edf1ef;
+    --ink-muted: #a8b6b2;
+    --hairline: #2a3634;
+    --brand: #4fb3a3;
+    --brand-strong: #6fc7b8;
+    --brand-tint: #1c2e2a;
+    --brass: #d8b04a;
+    --alert: #e88b77;
+    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.5), 0 10px 28px rgba(0, 0, 0, 0.45);
+  }
+}
+
+[data-theme="dark"] {
+  --surface: #101614;
+  --surface-raised: #17201e;
+  --ink: #edf1ef;
+  --ink-muted: #a8b6b2;
+  --hairline: #2a3634;
+  --brand: #4fb3a3;
+  --brand-strong: #6fc7b8;
+  --brand-tint: #1c2e2a;
+  --brass: #d8b04a;
+  --alert: #e88b77;
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.5), 0 10px 28px rgba(0, 0, 0, 0.45);
+}
+
+:root {
+  /* Гарнітури */
+  --font-display: Literata, Georgia, "Times New Roman", serif;
+  --font-text: Commissioner, "Segoe UI", system-ui, sans-serif;
+
+  /* Відступи */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;   /* мінімальний бічний відступ сторінки на телефоні */
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;   /* вертикальний відступ секції, телефон */
+  --space-9: 96px;   /* вертикальний відступ секції, десктоп */
+
+  /* Радіуси */
+  --radius-none: 0;
+  --radius-sm: 8px;
+  --radius-md: 14px;  /* основний радіус системи */
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+
+  /* Ширина текстової колонки */
+  --measure: 680px;
+}
+
+/* ---------- Типографічні класи ---------- */
+
+.display-l {
+  font-family: var(--font-display);
+  font-size: 44px;
+  line-height: 48px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.display-m {
+  font-family: var(--font-display);
+  font-size: 34px;
+  line-height: 40px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.heading-s {
+  font-family: var(--font-display);
+  font-size: 26px;
+  line-height: 32px;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+.heading-xs {
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 600;
+}
+
+.lead {
+  font-family: var(--font-text);
+  font-size: 19px;
+  line-height: 30px;
+  font-weight: 400;
+}
+
+.body {
+  font-family: var(--font-text);
+  font-size: 17px;
+  line-height: 28px;
+  font-weight: 400;
+}
+
+.small {
+  font-family: var(--font-text);
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.label {
+  font-family: var(--font-text);
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.price {
+  font-family: var(--font-text);
+  font-size: 26px;
+  line-height: 30px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
