@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Портфоліо — сайти для приватних лікарів</title>
+<meta name="description" content="Приклади односторінкових сайтів для приватних лікарів: стоматолог, косметолог, невролог, педіатр. 200 $, три робочі дні, домен оформлюється на вас.">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:wght@400..700&family=Commissioner:wght@400..800&display=swap">
+<link rel="stylesheet" href="tokens.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+
+  :root {
+    --studio:      #0f1a1d;
+    --studio-ink:  #eef3f2;
+    --studio-mut:  #97aaa8;
+    --studio-line: #22343a;
+    --studio-acc:  #5fc2b0;
+    --card:        #eceff0;
+  }
+  @media (prefers-color-scheme: dark) { :root { --card: #17201e; } }
+
+  body {
+    margin: 0;
+    background: var(--surface-raised);
+    color: var(--ink);
+    font-family: var(--font-text);
+    font-size: 17px;
+    line-height: 28px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { margin: 0; text-wrap: balance; }
+  p { margin: 0; }
+  ul, ol { margin: 0; padding: 0; list-style: none; }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: var(--brand); }
+  :focus-visible { outline: 2px solid var(--studio-acc); outline-offset: 3px; }
+
+  .wrap { width: 100%; max-width: 1180px; margin-inline: auto; padding-inline: var(--space-4); }
+  section { padding-block: var(--space-8); }
+  @media (min-width: 900px) { section { padding-block: var(--space-9); } }
+
+  .kicker { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; line-height: 16px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--brand); }
+  .kicker::before { content: ""; width: 22px; height: 2px; background: currentColor; }
+  .h2 { font-family: var(--font-display); font-size: clamp(28px, 4.4vw, 40px); line-height: 1.15; font-weight: 600; letter-spacing: -.015em; margin-top: var(--space-4); }
+  .muted { color: var(--ink-muted); }
+  .center { text-align: center; }
+
+  /* Кнопки */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    min-height: 48px; padding: 12px 26px; border-radius: var(--radius-pill);
+    font: 600 16px/1.2 var(--font-text); text-decoration: none; cursor: pointer;
+    background: var(--brand); color: #fff; border: 1px solid transparent;
+    transition: background-color .15s ease, transform .15s ease;
+  }
+  .btn:hover { background: var(--brand-strong); }
+  .btn-acc { background: var(--studio-acc); color: #05201c; }
+  .btn-acc:hover { background: #7fd3c4; }
+  .btn-ghost { background: transparent; color: var(--studio-ink); border-color: var(--studio-line); }
+  .btn-ghost:hover { background: rgba(255,255,255,.06); }
+
+  /* ---------- Шапка ---------- */
+  .top { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--surface-raised) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--hairline); }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); min-height: 68px; }
+  .logo { text-decoration: none; color: var(--ink); line-height: 1.15; }
+  .logo b { display: block; font-family: var(--font-display); font-size: 18px; }
+  .logo span { font-size: 13px; color: var(--ink-muted); }
+  .nav { display: none; gap: var(--space-5); }
+  .nav a { color: var(--ink-muted); text-decoration: none; font-size: 15px; font-weight: 500; }
+  .nav a:hover { color: var(--brand); }
+  .top .btn { min-height: 42px; padding: 10px 20px; font-size: 15px; }
+  @media (min-width: 860px) { .nav { display: flex; } }
+
+  /* ---------- Банер «Портфоліо» ---------- */
+  .banner {
+    padding-block: 56px 64px;
+    background:
+      radial-gradient(120% 140% at 0% 0%, color-mix(in srgb, var(--studio-acc) 45%, transparent) 0%, transparent 60%),
+      linear-gradient(120deg, var(--brand-tint), var(--surface));
+  }
+  .banner h1 { font-family: var(--font-display); font-size: clamp(42px, 8vw, 76px); line-height: 1; font-weight: 700; letter-spacing: -.03em; margin-top: var(--space-4); }
+  .banner p { margin-top: var(--space-4); font-size: 19px; line-height: 30px; color: var(--ink-muted); max-width: 46ch; margin-inline: auto; }
+  .facts { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: var(--space-5); }
+  .facts span { padding: 6px 14px; border-radius: var(--radius-pill); background: var(--surface-raised); border: 1px solid var(--hairline); font-size: 15px; font-weight: 600; }
+
+  /* ---------- Сітка робіт ---------- */
+  .hint { margin-top: var(--space-3); color: var(--ink-muted); font-size: 15px; }
+  .grid { display: grid; gap: 20px; margin-top: var(--space-7); grid-template-columns: 1fr; }
+  @media (min-width: 640px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1000px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .work {
+    display: flex; flex-direction: column; text-decoration: none; color: var(--ink);
+    background: var(--card); border: 1px solid var(--hairline); border-radius: var(--radius-md);
+    padding: 26px 20px 20px; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .work:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); border-color: var(--brand); }
+  .work h3 { font-family: var(--font-display); font-size: 22px; line-height: 28px; font-weight: 600; text-align: center; }
+  .work .sub { text-align: center; color: var(--ink-muted); font-size: 15px; line-height: 22px; margin-top: 6px; min-height: 44px; }
+  .work .shot { margin-top: 18px; border-radius: var(--radius-sm); overflow: hidden; aspect-ratio: 1120 / 752; }
+  .work .shot img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+  .work:hover .shot img { transform: scale(1.03); }
+  .work .open { margin-top: 14px; text-align: center; font-size: 15px; font-weight: 600; color: var(--brand); }
+
+  .work-cta {
+    display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: var(--space-4);
+    background: var(--studio); color: var(--studio-ink); border-radius: var(--radius-md); padding: 32px 28px;
+  }
+  .work-cta h3 { font-family: var(--font-display); font-size: 28px; line-height: 34px; font-weight: 600; }
+  .work-cta p { color: var(--studio-mut); max-width: 44ch; }
+  @media (min-width: 1000px) { .work-cta { grid-column: span 2; } }
+
+  .note { margin-top: var(--space-5); font-size: 14px; line-height: 22px; color: var(--ink-muted); }
+
+  /* ---------- Записатись (темна панель) ---------- */
+  .book { background: var(--studio); color: var(--studio-ink); }
+  .book .kicker { color: var(--studio-acc); }
+  .book .h2 { color: var(--studio-ink); }
+  .book-lead { margin-top: var(--space-4); color: var(--studio-mut); font-size: 19px; line-height: 30px; max-width: 52ch; }
+  .book-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: var(--space-6); }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: var(--space-7); background: var(--studio-line); border: 1px solid var(--studio-line); border-radius: var(--radius-md); overflow: hidden; }
+  .stats div { background: var(--studio); padding: 20px 16px; }
+  .stats b { display: block; font-family: var(--font-display); font-size: clamp(24px, 4vw, 34px); line-height: 1.1; color: var(--studio-ink); }
+  .stats span { display: block; margin-top: 6px; font-size: 14px; line-height: 20px; color: var(--studio-mut); }
+
+  /* ---------- Хто робить ---------- */
+  .who { display: grid; gap: var(--space-6); }
+  @media (min-width: 900px) { .who { grid-template-columns: 5fr 7fr; gap: var(--space-8); align-items: start; } }
+  .who-text p + p { margin-top: var(--space-4); }
+  .who-text { font-size: 18px; line-height: 30px; }
+
+  /* ---------- Ціна ---------- */
+  .alt { background: var(--surface); }
+  .price-grid { display: grid; gap: 20px; margin-top: var(--space-7); }
+  @media (min-width: 860px) { .price-grid { grid-template-columns: 1fr 1fr; } }
+  .panel { background: var(--surface-raised); border: 1px solid var(--hairline); border-radius: var(--radius-md); padding: 28px; }
+  .panel h3 { font-family: var(--font-display); font-size: 22px; line-height: 28px; }
+  .big-price { font-family: var(--font-display); font-size: 56px; line-height: 1; font-weight: 700; letter-spacing: -.02em; margin-top: var(--space-4); }
+  .checks { margin-top: var(--space-5); display: grid; gap: 10px; }
+  .checks li { position: relative; padding-left: 30px; }
+  .checks li::before { content: ""; position: absolute; left: 2px; top: 7px; width: 16px; height: 9px; border-left: 2px solid var(--brand); border-bottom: 2px solid var(--brand); transform: rotate(-45deg); }
+  .terms { margin-top: var(--space-4); display: grid; gap: var(--space-4); color: var(--ink-muted); }
+
+  /* ---------- Процес ---------- */
+  .steps { display: grid; gap: 20px; margin-top: var(--space-7); counter-reset: s; }
+  @media (min-width: 640px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1000px) { .steps { grid-template-columns: repeat(4, 1fr); } }
+  .steps li { counter-increment: s; border-top: 2px solid var(--brand); padding-top: var(--space-4); }
+  .steps li::before { content: "0" counter(s); font-size: 14px; font-weight: 700; color: var(--brand); letter-spacing: .1em; }
+  .steps h3 { font-family: var(--font-display); font-size: 21px; line-height: 27px; margin-top: 6px; }
+  .steps p { margin-top: 8px; color: var(--ink-muted); font-size: 16px; line-height: 26px; }
+
+  /* ---------- Навіщо ---------- */
+  .why { display: grid; gap: 20px; margin-top: var(--space-7); }
+  @media (min-width: 760px) { .why { grid-template-columns: 1fr 1fr; } }
+  .why li { background: var(--surface-raised); border: 1px solid var(--hairline); border-radius: var(--radius-md); padding: 24px; }
+  .why h3 { font-family: var(--font-display); font-size: 20px; line-height: 26px; }
+  .why p { margin-top: 8px; color: var(--ink-muted); font-size: 16px; line-height: 26px; }
+  .honest { margin-top: var(--space-5); padding: 18px 22px; border-left: 3px solid var(--brass); background: var(--surface-raised); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; color: var(--ink-muted); font-size: 16px; line-height: 26px; }
+
+  /* ---------- Фінальний CTA + футер ---------- */
+  .final { text-align: center; }
+  .final .book-actions { justify-content: center; }
+  .final p { max-width: 50ch; margin-inline: auto; }
+  footer { border-top: 1px solid var(--hairline); padding-block: var(--space-5); font-size: 14px; color: var(--ink-muted); }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+  footer a { color: var(--ink-muted); }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top"><b>Сайти лікарям</b><span>Олександр Кожарко</span></a>
+    <nav class="nav" aria-label="Розділи">
+      <a href="#roboty">Роботи</a>
+      <a href="#zapys">Записатись</a>
+      <a href="#hto">Хто робить</a>
+      <a href="#cina">Ціна</a>
+    </nav>
+    <a class="btn" href="#zapys">Записатись</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Банер -->
+  <div class="banner center">
+    <div class="wrap">
+      <span class="kicker">Сайти для приватних лікарів</span>
+      <h1>Портфоліо</h1>
+      <p>Односторінкові сайти, з яких пацієнт одразу бачить послуги, ціни й кнопку запису.</p>
+      <div class="facts"><span>200 $ під ключ</span><span>3 робочі дні</span><span>Домен на вас</span></div>
+    </div>
+  </div>
+
+  <!-- Роботи -->
+  <section id="roboty" class="center">
+    <div class="wrap">
+      <span class="kicker">Виконані проєкти</span>
+      <p class="hint">Натисніть на картку, щоб відкрити сайт. Найкраще — з телефона: пацієнти дивляться саме так.</p>
+
+      <div class="grid">
+        <a class="work" href="https://demo-stomatolog-peach.vercel.app/" target="_blank" rel="noopener">
+          <h3>Сайт стоматолога</h3>
+          <p class="sub">Прайс на першому екрані — бо пацієнт насамперед питає «скільки»</p>
+          <div class="shot"><img src="images/mock-stomatolog.jpg" width="1120" height="752" loading="lazy" alt="Сайт стоматолога на ноутбуці й телефоні"></div>
+          <span class="open">Відкрити сайт →</span>
+        </a>
+        <a class="work" href="https://demo-kosmetolog.vercel.app/" target="_blank" rel="noopener">
+          <h3>Сайт косметолога</h3>
+          <p class="sub">Сторінка на фотографіях і тепла палітра замість медичної бірюзи</p>
+          <div class="shot"><img src="images/mock-kosmetolog.jpg" width="1120" height="752" loading="lazy" alt="Сайт косметолога на ноутбуці й телефоні"></div>
+          <span class="open">Відкрити сайт →</span>
+        </a>
+        <a class="work" href="https://demo-nevrolog.vercel.app/" target="_blank" rel="noopener">
+          <h3>Сайт невролога</h3>
+          <p class="sub">Скарги мовою пацієнта й відкриті ціни без гортання</p>
+          <div class="shot"><img src="images/mock-nevrolog.jpg" width="1120" height="752" loading="lazy" alt="Сайт невролога на ноутбуці й телефоні"></div>
+          <span class="open">Відкрити сайт →</span>
+        </a>
+        <a class="work" href="https://demo-pediatr.vercel.app/" target="_blank" rel="noopener">
+          <h3>Сайт педіатра</h3>
+          <p class="sub">Окремі години для дітей з температурою й чеклист «що взяти з собою»</p>
+          <div class="shot"><img src="images/mock-pediatr.jpg" width="1120" height="752" loading="lazy" alt="Сайт педіатра на ноутбуці й телефоні"></div>
+          <span class="open">Відкрити сайт →</span>
+        </a>
+        <div class="work-cta" style="text-align:left">
+          <h3>Наступний сайт — під вашу спеціальність</h3>
+          <p>Напишіть у двох реченнях, чим займаєтесь, — покажу, що саме має бути на вашому сайті. Безкоштовно й ні до чого не зобов'язує.</p>
+          <a class="btn btn-acc" href="#zapys">Записатись</a>
+        </div>
+      </div>
+
+      <p class="note">Це демонстраційні сайти для вигаданих лікарів, із реальними ринковими цінами.</p>
+    </div>
+  </section>
+
+  <!-- Записатись -->
+  <section id="zapys" class="book">
+    <div class="wrap">
+      <span class="kicker">Записатись</span>
+      <h2 class="h2">Хочете такий сайт для своєї практики?</h2>
+      <p class="book-lead">Напишіть, чим займаєтесь і в якому місті. Відповім сам, без менеджерів, і запропоную структуру саме під вас.</p>
+      <div class="book-actions">
+        <a class="btn btn-acc" href="https://t.me/Olexandr_Kozharko" target="_blank" rel="noopener">Написати в Telegram</a>
+        <a class="btn btn-ghost" href="https://www.instagram.com/sajty.likaryam/" target="_blank" rel="noopener">Написати в Instagram</a>
+      </div>
+      <div class="stats">
+        <div><b>200 $</b><span>фіксовано, під ключ</span></div>
+        <div><b>3 дні</b><span>робочих від старту</span></div>
+        <div><b>1 раунд</b><span>правок входить</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Хто робить -->
+  <section id="hto">
+    <div class="wrap who">
+      <div>
+        <span class="kicker">Хто робить</span>
+        <h2 class="h2">Олександр Кожарко</h2>
+        <p class="muted" style="margin-top:16px">Ви маєте знати, з ким матимете справу, перш ніж писати незнайомій людині про свій сайт.</p>
+      </div>
+      <div class="who-text">
+        <p>Я обрав лікарів як напрям, бо задача в них однакова: показати послуги, ціни й спосіб записатись.</p>
+        <p>Коли робиш одне й те саме, бачиш, які блоки справді доводять пацієнта до запису, а які просто займають місце. Звідси три дні, а не місяць.</p>
+        <p>Ви пишете напряму виконавцю. Хто відповідає — той і робить.</p>
+        <p>Якщо після брифу стане зрозуміло, що сайт вам зараз не потрібен, скажу прямо. Продавати те, що не спрацює, невигідно нам обом.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ціна -->
+  <section id="cina" class="alt">
+    <div class="wrap">
+      <span class="kicker">Ціна</span>
+      <h2 class="h2">Що входить у 200 $</h2>
+      <div class="price-grid">
+        <div class="panel">
+          <h3>Сайт під ключ</h3>
+          <div class="big-price">200 $</div>
+          <ul class="checks">
+            <li>Односторінковий сайт під вашу спеціальність</li>
+            <li>Опис послуг і ваші ціни</li>
+            <li>Ваші фото та відгуки пацієнтів</li>
+            <li>Кнопки запису: Viber, Telegram, Instagram, дзвінок</li>
+            <li>Коректна робота на телефоні</li>
+            <li>Один раунд правок після здачі</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Умови</h3>
+          <div class="terms">
+            <p>Ціна названа до старту й не змінюється в процесі. Без «це виявилось складніше» на етапі здачі.</p>
+            <p>Передоплата 50% до старту, решта — до передачі доступів.</p>
+            <p>Домен і робоча пошта оплачуються окремо, за тарифами реєстратора, і оформлюються на вас. Сайт лишається вашою власністю.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Процес -->
+  <section id="proces">
+    <div class="wrap">
+      <span class="kicker">Як працюємо</span>
+      <h2 class="h2">Чотири кроки, ваша участь — у двох</h2>
+      <ol class="steps">
+        <li><h3>Бриф</h3><p>Короткі питання про вашу практику — близько 15 хвилин, можна голосовими.</p></li>
+        <li><h3>Готовий сайт</h3><p>Три робочі дні від передоплати. Присилаю посилання, ви дивитесь із телефона.</p></li>
+        <li><h3>Правки</h3><p>Збираєте побажання одним списком — вношу їх разом.</p></li>
+        <li><h3>Передача</h3><p>Сайт і домен переходять до вас. Далі ви ні від кого не залежите.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Навіщо -->
+  <section id="navishcho" class="alt">
+    <div class="wrap">
+      <span class="kicker">Навіщо сайт</span>
+      <h2 class="h2">Якщо вже є Instagram</h2>
+      <ul class="why">
+        <li><h3>Пацієнт гуглить ваше ім'я</h3><p>Вас порадили — людина шукає вас у Google. Не знаходить нічого й іде до того, у кого сайт є.</p></li>
+        <li><h3>Стрічка гортається — сайт ні</h3><p>Пост із цінами губиться за два тижні. На сайті вони лежать там, де ви їх поклали.</p></li>
+        <li><h3>Одне посилання замість пояснень</h3><p>У біо, у переписці, на візитці — замість «погортайте профіль, там десь було».</p></li>
+        <li><h3>Акаунт вам не належить</h3><p>Instagram можуть заблокувати. Сайт і домен оформлені на вас — їх ніхто не забере.</p></li>
+      </ul>
+      <p class="honest">Чого сайт не зробить: не виведе вас у топ за загальним запитом на кшталт «стоматолог у місті» — там клініки з великими сайтами. Він працює на пошук за вашим іменем.</p>
+    </div>
+  </section>
+
+  <!-- Фінальний CTA -->
+  <section class="final">
+    <div class="wrap">
+      <span class="kicker">Записатись</span>
+      <h2 class="h2">Покажу приклад під вашу спеціальність</h2>
+      <p class="muted" style="margin-top:16px">Два речення про вашу практику — і я відповім, що саме має бути на вашому сайті.</p>
+      <div class="book-actions" style="margin-top:28px">
+        <a class="btn" href="https://t.me/Olexandr_Kozharko" target="_blank" rel="noopener">Написати в Telegram</a>
+        <a class="btn" style="background:transparent;color:var(--brand);border-color:var(--brand)" href="https://www.instagram.com/sajty.likaryam/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Олександр Кожарко · сайти приватним лікарям</span>
+    <span><a href="https://t.me/Olexandr_Kozharko" target="_blank" rel="noopener">Telegram</a> · <a href="https://www.instagram.com/sajty.likaryam/" target="_blank" rel="noopener">Instagram</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
